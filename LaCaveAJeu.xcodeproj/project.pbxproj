@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */; };
+		B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595892D8186E000219A27 /* ContentView.swift */; };
+		B7C5958C2D8186E100219A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C5958B2D8186E100219A27 /* Assets.xcassets */; };
+		B7C5958F2D8186E100219A27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C5958E2D8186E100219A27 /* Preview Assets.xcassets */; };
+		B7C595992D8186E100219A27 /* LaCaveAJeuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595982D8186E100219A27 /* LaCaveAJeuTests.swift */; };
+		B7C595A32D8186E100219A27 /* LaCaveAJeuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595A22D8186E100219A27 /* LaCaveAJeuUITests.swift */; };
+		B7C595A52D8186E100219A27 /* LaCaveAJeuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595A42D8186E100219A27 /* LaCaveAJeuUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B7C595952D8186E100219A27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7C5957C2D8186E000219A27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7C595832D8186E000219A27;
+			remoteInfo = LaCaveAJeu;
+		};
+		B7C5959F2D8186E100219A27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7C5957C2D8186E000219A27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7C595832D8186E000219A27;
+			remoteInfo = LaCaveAJeu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B7C595842D8186E000219A27 /* LaCaveAJeu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaCaveAJeu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuApp.swift; sourceTree = "<group>"; };
+		B7C595892D8186E000219A27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B7C5958B2D8186E100219A27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7C5958E2D8186E100219A27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B7C595942D8186E100219A27 /* LaCaveAJeuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaCaveAJeuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7C595982D8186E100219A27 /* LaCaveAJeuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuTests.swift; sourceTree = "<group>"; };
+		B7C5959E2D8186E100219A27 /* LaCaveAJeuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaCaveAJeuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7C595A22D8186E100219A27 /* LaCaveAJeuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuUITests.swift; sourceTree = "<group>"; };
+		B7C595A42D8186E100219A27 /* LaCaveAJeuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7C595812D8186E000219A27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7C595912D8186E100219A27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7C5959B2D8186E100219A27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B7C5957B2D8186E000219A27 = {
+			isa = PBXGroup;
+			children = (
+				B7C595862D8186E000219A27 /* LaCaveAJeu */,
+				B7C595972D8186E100219A27 /* LaCaveAJeuTests */,
+				B7C595A12D8186E100219A27 /* LaCaveAJeuUITests */,
+				B7C595852D8186E000219A27 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B7C595852D8186E000219A27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7C595842D8186E000219A27 /* LaCaveAJeu.app */,
+				B7C595942D8186E100219A27 /* LaCaveAJeuTests.xctest */,
+				B7C5959E2D8186E100219A27 /* LaCaveAJeuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7C595862D8186E000219A27 /* LaCaveAJeu */ = {
+			isa = PBXGroup;
+			children = (
+				B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */,
+				B7C595892D8186E000219A27 /* ContentView.swift */,
+				B7C5958B2D8186E100219A27 /* Assets.xcassets */,
+				B7C5958D2D8186E100219A27 /* Preview Content */,
+			);
+			path = LaCaveAJeu;
+			sourceTree = "<group>";
+		};
+		B7C5958D2D8186E100219A27 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B7C5958E2D8186E100219A27 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B7C595972D8186E100219A27 /* LaCaveAJeuTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7C595982D8186E100219A27 /* LaCaveAJeuTests.swift */,
+			);
+			path = LaCaveAJeuTests;
+			sourceTree = "<group>";
+		};
+		B7C595A12D8186E100219A27 /* LaCaveAJeuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B7C595A22D8186E100219A27 /* LaCaveAJeuUITests.swift */,
+				B7C595A42D8186E100219A27 /* LaCaveAJeuUITestsLaunchTests.swift */,
+			);
+			path = LaCaveAJeuUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7C595832D8186E000219A27 /* LaCaveAJeu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7C595A82D8186E100219A27 /* Build configuration list for PBXNativeTarget "LaCaveAJeu" */;
+			buildPhases = (
+				B7C595802D8186E000219A27 /* Sources */,
+				B7C595812D8186E000219A27 /* Frameworks */,
+				B7C595822D8186E000219A27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LaCaveAJeu;
+			productName = LaCaveAJeu;
+			productReference = B7C595842D8186E000219A27 /* LaCaveAJeu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B7C595932D8186E100219A27 /* LaCaveAJeuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7C595AB2D8186E100219A27 /* Build configuration list for PBXNativeTarget "LaCaveAJeuTests" */;
+			buildPhases = (
+				B7C595902D8186E100219A27 /* Sources */,
+				B7C595912D8186E100219A27 /* Frameworks */,
+				B7C595922D8186E100219A27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7C595962D8186E100219A27 /* PBXTargetDependency */,
+			);
+			name = LaCaveAJeuTests;
+			productName = LaCaveAJeuTests;
+			productReference = B7C595942D8186E100219A27 /* LaCaveAJeuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B7C5959D2D8186E100219A27 /* LaCaveAJeuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7C595AE2D8186E100219A27 /* Build configuration list for PBXNativeTarget "LaCaveAJeuUITests" */;
+			buildPhases = (
+				B7C5959A2D8186E100219A27 /* Sources */,
+				B7C5959B2D8186E100219A27 /* Frameworks */,
+				B7C5959C2D8186E100219A27 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7C595A02D8186E100219A27 /* PBXTargetDependency */,
+			);
+			name = LaCaveAJeuUITests;
+			productName = LaCaveAJeuUITests;
+			productReference = B7C5959E2D8186E100219A27 /* LaCaveAJeuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7C5957C2D8186E000219A27 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					B7C595832D8186E000219A27 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					B7C595932D8186E100219A27 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B7C595832D8186E000219A27;
+					};
+					B7C5959D2D8186E100219A27 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B7C595832D8186E000219A27;
+					};
+				};
+			};
+			buildConfigurationList = B7C5957F2D8186E000219A27 /* Build configuration list for PBXProject "LaCaveAJeu" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7C5957B2D8186E000219A27;
+			productRefGroup = B7C595852D8186E000219A27 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7C595832D8186E000219A27 /* LaCaveAJeu */,
+				B7C595932D8186E100219A27 /* LaCaveAJeuTests */,
+				B7C5959D2D8186E100219A27 /* LaCaveAJeuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7C595822D8186E000219A27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7C5958F2D8186E100219A27 /* Preview Assets.xcassets in Resources */,
+				B7C5958C2D8186E100219A27 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7C595922D8186E100219A27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7C5959C2D8186E100219A27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7C595802D8186E000219A27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */,
+				B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7C595902D8186E100219A27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7C595992D8186E100219A27 /* LaCaveAJeuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7C5959A2D8186E100219A27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7C595A32D8186E100219A27 /* LaCaveAJeuUITests.swift in Sources */,
+				B7C595A52D8186E100219A27 /* LaCaveAJeuUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7C595962D8186E100219A27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7C595832D8186E000219A27 /* LaCaveAJeu */;
+			targetProxy = B7C595952D8186E100219A27 /* PBXContainerItemProxy */;
+		};
+		B7C595A02D8186E100219A27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7C595832D8186E000219A27 /* LaCaveAJeu */;
+			targetProxy = B7C5959F2D8186E100219A27 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B7C595A62D8186E100219A27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B7C595A72D8186E100219A27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7C595A92D8186E100219A27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LaCaveAJeu/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mathilde.LaCaveAJeu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B7C595AA2D8186E100219A27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LaCaveAJeu/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mathilde.LaCaveAJeu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B7C595AC2D8186E100219A27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mathilde.LaCaveAJeuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaCaveAJeu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LaCaveAJeu";
+			};
+			name = Debug;
+		};
+		B7C595AD2D8186E100219A27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mathilde.LaCaveAJeuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LaCaveAJeu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LaCaveAJeu";
+			};
+			name = Release;
+		};
+		B7C595AF2D8186E100219A27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mathilde.LaCaveAJeuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LaCaveAJeu;
+			};
+			name = Debug;
+		};
+		B7C595B02D8186E100219A27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Mathilde.LaCaveAJeuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LaCaveAJeu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7C5957F2D8186E000219A27 /* Build configuration list for PBXProject "LaCaveAJeu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7C595A62D8186E100219A27 /* Debug */,
+				B7C595A72D8186E100219A27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7C595A82D8186E100219A27 /* Build configuration list for PBXNativeTarget "LaCaveAJeu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7C595A92D8186E100219A27 /* Debug */,
+				B7C595AA2D8186E100219A27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7C595AB2D8186E100219A27 /* Build configuration list for PBXNativeTarget "LaCaveAJeuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7C595AC2D8186E100219A27 /* Debug */,
+				B7C595AD2D8186E100219A27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7C595AE2D8186E100219A27 /* Build configuration list for PBXNativeTarget "LaCaveAJeuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7C595AF2D8186E100219A27 /* Debug */,
+				B7C595B02D8186E100219A27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7C5957C2D8186E000219A27 /* Project object */;
+}
