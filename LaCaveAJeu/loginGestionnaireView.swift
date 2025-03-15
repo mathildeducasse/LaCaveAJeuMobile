@@ -64,18 +64,17 @@ struct loginGestionnaireView: View {
                                 .cornerRadius(10)
                                 .foregroundColor(.white)
                         }
-                        
-                        Button(action: {
-                            // Action pour la connexion
-                        }) {
-                            Text("se connecter")
-                                .fontWeight(.bold)
-                                .foregroundColor(.blue)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.blue.opacity(0.5))
-                                .cornerRadius(10)
-                        }
+                        Spacer().frame(height: 40);                           Button(action: {
+                                // Action pour la connexion
+                            }) {
+                                Text("se connecter")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.blue)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.blue.opacity(0.5))
+                                    .cornerRadius(10)
+                            }
                     }
                     .padding()
                     .background(prettyBlue)
