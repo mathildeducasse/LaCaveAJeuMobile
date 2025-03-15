@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        var redark = Color(red : 149/255.0, green :29/255.0, blue:25/255.0)
+        let redark = Color(red : 149/255.0, green :29/255.0, blue:25/255.0)
         NavigationView{
             ZStack {
-                var yellowlight = Color(red: 241/255.0, green: 227/255.0, blue: 129/255.0)
+                let yellowlight = Color(red: 241/255.0, green: 227/255.0, blue: 129/255.0)
                 
                 VStack {
                     
