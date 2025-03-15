@@ -15,6 +15,7 @@ struct loginGestionnaireView: View {
         let prettyBlue = Color(red:45/255.0, green: 85/255.0, blue :166/255.0)
         let bluelight2 = Color(red : 121/255.0, green : 178/255.0, blue: 218/255.0)
         var yellowlight = Color(red: 241/255.0, green: 227/255.0, blue: 129/255.0)
+        let redark = Color(red : 149/255.0, green :29/255.0, blue:25/255.0)
         NavigationView(){
             ZStack{
                 VStack {
@@ -51,7 +52,7 @@ struct loginGestionnaireView: View {
                                 .padding()
                                 .background(bluelight2)
                                 .cornerRadius(10)
-                                .foregroundColor(.white)
+                                .foregroundColor(redark)
                         }
                         
                         VStack(alignment: .leading, spacing: 0) {
@@ -62,7 +63,7 @@ struct loginGestionnaireView: View {
                                 .padding()
                                 .background(bluelight2)
                                 .cornerRadius(10)
-                                .foregroundColor(.white)
+                                .foregroundColor(redark)
                         }
                         Spacer().frame(height: 40);                           Button(action: {
                                 // Action pour la connexion
