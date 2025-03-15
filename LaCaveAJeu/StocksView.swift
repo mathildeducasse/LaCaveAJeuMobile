@@ -107,7 +107,7 @@ struct GameRow: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(name)
-                    .font(.jomhuriaLittle())
+                    .font(.title2)
                     .foregroundColor(redark)
                 Text("\(seller)  —  \(quantity)")
                     .font(.subheadline)
