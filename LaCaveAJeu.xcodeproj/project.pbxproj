@@ -18,6 +18,10 @@
 		B7C595B82D81CA6D00219A27 /* SwiftUI+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595B72D81CA6D00219A27 /* SwiftUI+font.swift */; };
 		B7C595BA2D81D0CE00219A27 /* loginGestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595B92D81D0CE00219A27 /* loginGestionnaireView.swift */; };
 		B7C595BC2D81D19100219A27 /* StocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595BB2D81D19100219A27 /* StocksView.swift */; };
+		B7C595BE2D858AE900219A27 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595BD2D858AE900219A27 /* ServiceAPI.swift */; };
+		B7C595C22D87068200219A27 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C12D87068200219A27 /* Game.swift */; };
+		B7C595C42D8709F200219A27 /* Vendeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C32D8709F200219A27 /* Vendeur.swift */; };
+		B7C595C62D870C4000219A27 /* Acheteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C52D870C4000219A27 /* Acheteur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		B7C595B72D81CA6D00219A27 /* SwiftUI+font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+font.swift"; sourceTree = "<group>"; };
 		B7C595B92D81D0CE00219A27 /* loginGestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginGestionnaireView.swift; sourceTree = "<group>"; };
 		B7C595BB2D81D19100219A27 /* StocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksView.swift; sourceTree = "<group>"; };
+		B7C595BD2D858AE900219A27 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
+		B7C595C12D87068200219A27 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B7C595C32D8709F200219A27 /* Vendeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendeur.swift; sourceTree = "<group>"; };
+		B7C595C52D870C4000219A27 /* Acheteur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acheteur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,8 @@
 		B7C595862D8186E000219A27 /* LaCaveAJeu */ = {
 			isa = PBXGroup;
 			children = (
+				B7C595C02D87065F00219A27 /* Models */,
+				B7C595BD2D858AE900219A27 /* ServiceAPI.swift */,
 				B7C595B62D81CA4400219A27 /* Extensions */,
 				B7C595B22D81C62C00219A27 /* Ressources */,
 				B7C595B12D81C55800219A27 /* Info.plist */,
@@ -163,6 +173,16 @@
 				B7C595B72D81CA6D00219A27 /* SwiftUI+font.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B7C595C02D87065F00219A27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B7C595C12D87068200219A27 /* Game.swift */,
+				B7C595C32D8709F200219A27 /* Vendeur.swift */,
+				B7C595C52D870C4000219A27 /* Acheteur.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,9 +317,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */,
+				B7C595C42D8709F200219A27 /* Vendeur.swift in Sources */,
+				B7C595C62D870C4000219A27 /* Acheteur.swift in Sources */,
 				B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */,
+				B7C595C22D87068200219A27 /* Game.swift in Sources */,
 				B7C595B82D81CA6D00219A27 /* SwiftUI+font.swift in Sources */,
 				B7C595BA2D81D0CE00219A27 /* loginGestionnaireView.swift in Sources */,
+				B7C595BE2D858AE900219A27 /* ServiceAPI.swift in Sources */,
 				B7C595BC2D81D19100219A27 /* StocksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
