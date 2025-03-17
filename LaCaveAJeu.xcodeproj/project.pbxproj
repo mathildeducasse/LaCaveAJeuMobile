@@ -24,6 +24,7 @@
 		B7C595C62D870C4000219A27 /* Acheteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C52D870C4000219A27 /* Acheteur.swift */; };
 		B7C595C82D8759C400219A27 /* VendeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C72D8759C400219A27 /* VendeurView.swift */; };
 		B7C595CB2D881E5E00219A27 /* TableauDeBordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595CA2D881E5E00219A27 /* TableauDeBordView.swift */; };
+		B7C595CE2D882DA500219A27 /* VendeurIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B7C595C52D870C4000219A27 /* Acheteur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acheteur.swift; sourceTree = "<group>"; };
 		B7C595C72D8759C400219A27 /* VendeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendeurView.swift; sourceTree = "<group>"; };
 		B7C595CA2D881E5E00219A27 /* TableauDeBordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableauDeBordView.swift; sourceTree = "<group>"; };
+		B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendeurIViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		B7C595862D8186E000219A27 /* LaCaveAJeu */ = {
 			isa = PBXGroup;
 			children = (
+				B7C595CC2D882D8500219A27 /* ViewModel */,
 				B7C595C92D881E2C00219A27 /* View */,
 				B7C595C02D87065F00219A27 /* Models */,
 				B7C595BD2D858AE900219A27 /* ServiceAPI.swift */,
@@ -197,6 +200,14 @@
 				B7C595CA2D881E5E00219A27 /* TableauDeBordView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B7C595CC2D882D8500219A27 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 				B7C595B82D81CA6D00219A27 /* SwiftUI+font.swift in Sources */,
 				B7C595CB2D881E5E00219A27 /* TableauDeBordView.swift in Sources */,
 				B7C595C82D8759C400219A27 /* VendeurView.swift in Sources */,
+				B7C595CE2D882DA500219A27 /* VendeurIViewModel.swift in Sources */,
 				B7C595BA2D81D0CE00219A27 /* loginGestionnaireView.swift in Sources */,
 				B7C595BE2D858AE900219A27 /* ServiceAPI.swift in Sources */,
 				B7C595BC2D81D19100219A27 /* StocksView.swift in Sources */,

@@ -9,21 +9,25 @@ import Foundation
 
 class APIService : ObservableObject{
     @Published var games: [Game] = []
-    @Published var vendeurs : [Vendeur] = []
+    
     @Published var acheteurs : [Acheteur] = []
     static let shared = APIService()
     private let baseURL = "https://awiback-30abadc2c48e.herokuapp.com/api"
     
     
-    func fetchVendeurs(){
+    func fetchVendeurs(completion: @escaping ([Vendeur]) -> Void ){
         guard let url = URL(string : "\(baseURL)/vendeur") else {return}
         
         URLSession.shared.dataTask(with: url) {data, _, error in
             if let data = data {
-                DispatchQueue.main.async {
-                    self.vendeurs = (try? JSONDecoder().decode([Vendeur].self, from: data)) ?? []
+                do {
+                    let decodedData = try JSONDecoder().decode([Vendeur].self, from:data)
+                    DispatchQueue.main.async {
+                        completion(decodedData)
+                    }
+                }catch{
+                    print("erreur de decodage : ", error)
                 }
-                
             }
             
         }.resume()

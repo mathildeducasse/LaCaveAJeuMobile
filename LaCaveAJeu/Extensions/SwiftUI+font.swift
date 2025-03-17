@@ -17,4 +17,7 @@ extension Font{
     static func jomhuriaBig() -> Font {
         return Font.custom("Jomhuria-Regular",size: 68)
     }
+    static func jomhuriaBigger() -> Font {
+        return Font.custom("Jomhuria-Regular", size: 80)
+    }
 }
