@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct VendeurView: View {
+    @StateObject var apiService = APIService()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if apiService.vendeurs.isEmpty {
+                            ProgressView("Chargement...") // Indicateur de chargement
+            } else {
+                List(apiService.vendeurs) { vendeur in
+                    Text(vendeur.nom)
+                }
+                
+            }
+            Text("ahhh")
+        }.background(Color.red)
+            .onAppear {
+                    apiService.fetchVendeurs()
+                }
+        
     }
+    
 }
 
 struct VendeurView_Previews: PreviewProvider {

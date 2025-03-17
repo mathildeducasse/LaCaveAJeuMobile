@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Acheteur {
+struct Acheteur : Codable{
     var id : String
     var nom : String
     var prenom  : String

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Game {
+struct Game : Codable{
     var id : String
     var proprietaire : String
     var typeJeu : String

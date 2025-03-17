@@ -22,6 +22,8 @@
 		B7C595C22D87068200219A27 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C12D87068200219A27 /* Game.swift */; };
 		B7C595C42D8709F200219A27 /* Vendeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C32D8709F200219A27 /* Vendeur.swift */; };
 		B7C595C62D870C4000219A27 /* Acheteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C52D870C4000219A27 /* Acheteur.swift */; };
+		B7C595C82D8759C400219A27 /* VendeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595C72D8759C400219A27 /* VendeurView.swift */; };
+		B7C595CB2D881E5E00219A27 /* TableauDeBordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595CA2D881E5E00219A27 /* TableauDeBordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		B7C595C12D87068200219A27 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B7C595C32D8709F200219A27 /* Vendeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendeur.swift; sourceTree = "<group>"; };
 		B7C595C52D870C4000219A27 /* Acheteur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acheteur.swift; sourceTree = "<group>"; };
+		B7C595C72D8759C400219A27 /* VendeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendeurView.swift; sourceTree = "<group>"; };
+		B7C595CA2D881E5E00219A27 /* TableauDeBordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableauDeBordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		B7C5957B2D8186E000219A27 = {
 			isa = PBXGroup;
 			children = (
+				B7C595C72D8759C400219A27 /* VendeurView.swift */,
 				B7C595862D8186E000219A27 /* LaCaveAJeu */,
 				B7C595972D8186E100219A27 /* LaCaveAJeuTests */,
 				B7C595A12D8186E100219A27 /* LaCaveAJeuUITests */,
@@ -111,17 +116,15 @@
 		B7C595862D8186E000219A27 /* LaCaveAJeu */ = {
 			isa = PBXGroup;
 			children = (
+				B7C595C92D881E2C00219A27 /* View */,
 				B7C595C02D87065F00219A27 /* Models */,
 				B7C595BD2D858AE900219A27 /* ServiceAPI.swift */,
 				B7C595B62D81CA4400219A27 /* Extensions */,
 				B7C595B22D81C62C00219A27 /* Ressources */,
 				B7C595B12D81C55800219A27 /* Info.plist */,
 				B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */,
-				B7C595892D8186E000219A27 /* ContentView.swift */,
 				B7C5958B2D8186E100219A27 /* Assets.xcassets */,
 				B7C5958D2D8186E100219A27 /* Preview Content */,
-				B7C595B92D81D0CE00219A27 /* loginGestionnaireView.swift */,
-				B7C595BB2D81D19100219A27 /* StocksView.swift */,
 			);
 			path = LaCaveAJeu;
 			sourceTree = "<group>";
@@ -183,6 +186,17 @@
 				B7C595C52D870C4000219A27 /* Acheteur.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B7C595C92D881E2C00219A27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B7C595BB2D81D19100219A27 /* StocksView.swift */,
+				B7C595B92D81D0CE00219A27 /* loginGestionnaireView.swift */,
+				B7C595892D8186E000219A27 /* ContentView.swift */,
+				B7C595CA2D881E5E00219A27 /* TableauDeBordView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +336,8 @@
 				B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */,
 				B7C595C22D87068200219A27 /* Game.swift in Sources */,
 				B7C595B82D81CA6D00219A27 /* SwiftUI+font.swift in Sources */,
+				B7C595CB2D881E5E00219A27 /* TableauDeBordView.swift in Sources */,
+				B7C595C82D8759C400219A27 /* VendeurView.swift in Sources */,
 				B7C595BA2D81D0CE00219A27 /* loginGestionnaireView.swift in Sources */,
 				B7C595BE2D858AE900219A27 /* ServiceAPI.swift in Sources */,
 				B7C595BC2D81D19100219A27 /* StocksView.swift in Sources */,
