@@ -36,7 +36,7 @@ struct TableauDeBordView: View {
                             .frame(width: 160, height: 140)
                             .background(bluefonce)
                             .cornerRadius(10)}
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: VendeurView()) {
                             VStack{
                                 Spacer().frame(height: 40);
                                 Text("🤑")
@@ -94,7 +94,7 @@ struct TableauDeBordView: View {
                             .frame(width: 160, height: 140)
                             .background(bluefonce)
                             .cornerRadius(10)}
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: StocksView()) {
                             VStack{
                                 Spacer().frame(height: 40);
                                 Text("🧩")

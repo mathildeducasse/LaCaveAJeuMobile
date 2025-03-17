@@ -20,6 +20,24 @@ class VendeurlViewModel : ObservableObject {
         }
     }
     
+    func addVendeurs(_ vendeur : Vendeur){
+        apiservice.addVendeur(vendeur)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.fetchVendeurs()
+                }
+    }
+    
+    func resetSolde(id : String){
+        apiservice.resetSolde(id)
+    }
+    
+    func deleteVendeur(id : String){
+        apiservice.deleteVendeur(id)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.fetchVendeurs()  // Rafraîchir la liste après suppression
+            }
+    }
+    
 }
 
 
