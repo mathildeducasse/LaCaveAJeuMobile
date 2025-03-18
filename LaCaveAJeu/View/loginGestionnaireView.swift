@@ -16,7 +16,7 @@ struct loginGestionnaireView: View {
         let bluelight2 = Color(red : 121/255.0, green : 178/255.0, blue: 218/255.0)
         let yellowlight = Color(red: 241/255.0, green: 227/255.0, blue: 129/255.0)
         let redark = Color(red : 149/255.0, green :29/255.0, blue:25/255.0)
-        NavigationView(){
+        NavigationView{
             ZStack{
                 VStack {
 //                    // Bouton retour
@@ -65,17 +65,22 @@ struct loginGestionnaireView: View {
                                 .cornerRadius(10)
                                 .foregroundColor(redark)
                         }
-                        Spacer().frame(height: 40);                           Button(action: {
-                                // Action pour la connexion
-                            }) {
-                                Text("se connecter")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.blue)
-                                    .padding()
-                                    .frame(maxWidth: .infinity)
-                                    .background(Color.blue.opacity(0.5))
-                                    .cornerRadius(10)
-                            }
+                        Spacer().frame(height: 40);
+                        
+                        NavigationLink(destination: TableauDeBordView()){
+//                            Button(action: {
+//                        })
+                            //{
+                            Text("se connecter")
+                                .fontWeight(.bold)
+                                .foregroundColor(.blue)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.blue.opacity(0.5))
+                                .cornerRadius(10)
+                        //}
+                        
+                    }
                     }
                     .padding()
                     .background(prettyBlue)

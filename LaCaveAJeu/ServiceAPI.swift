@@ -121,7 +121,7 @@ class APIService : ObservableObject{
 //------------------------------------------------------------------
     
 //Jeux -------------------------------------------------------------
-    func fetchJeux(completion: @escaping ([Game]) -> Void ){
+    func fetchGame(completion: @escaping ([Game]) -> Void ){
         guard let url = URL(string : "\(baseURL)/jeu") else {return}
         
         URLSession.shared.dataTask(with: url) {data, _, error in
