@@ -12,6 +12,9 @@
 		B79B2B9A2D89948700F35128 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B992D89948700F35128 /* Session.swift */; };
 		B79B2B9C2D89975D00F35128 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B9B2D89975D00F35128 /* SessionViewModel.swift */; };
 		B79B2B9E2D899B3500F35128 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B9D2D899B3500F35128 /* SessionView.swift */; };
+		B79B2BA12D8B076B00F35128 /* ServiceTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2BA02D8B076B00F35128 /* ServiceTransactions.swift */; };
+		B79B2BA52D8B088C00F35128 /* JeuxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2BA42D8B088C00F35128 /* JeuxView.swift */; };
+		B79B2BA72D8B319200F35128 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2BA62D8B319200F35128 /* FilterView.swift */; };
 		B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */; };
 		B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595892D8186E000219A27 /* ContentView.swift */; };
 		B7C5958C2D8186E100219A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C5958B2D8186E100219A27 /* Assets.xcassets */; };
@@ -56,6 +59,9 @@
 		B79B2B992D89948700F35128 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B79B2B9B2D89975D00F35128 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
 		B79B2B9D2D899B3500F35128 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		B79B2BA02D8B076B00F35128 /* ServiceTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTransactions.swift; sourceTree = "<group>"; };
+		B79B2BA42D8B088C00F35128 /* JeuxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxView.swift; sourceTree = "<group>"; };
+		B79B2BA62D8B319200F35128 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		B7C595842D8186E000219A27 /* LaCaveAJeu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaCaveAJeu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuApp.swift; sourceTree = "<group>"; };
 		B7C595892D8186E000219A27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B79B2B9F2D8B073000F35128 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B7C595BD2D858AE900219A27 /* ServiceAPI.swift */,
+				B79B2BA02D8B076B00F35128 /* ServiceTransactions.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B7C5957B2D8186E000219A27 = {
 			isa = PBXGroup;
 			children = (
@@ -129,10 +144,10 @@
 		B7C595862D8186E000219A27 /* LaCaveAJeu */ = {
 			isa = PBXGroup;
 			children = (
+				B79B2B9F2D8B073000F35128 /* Services */,
 				B7C595CC2D882D8500219A27 /* ViewModel */,
 				B7C595C92D881E2C00219A27 /* View */,
 				B7C595C02D87065F00219A27 /* Models */,
-				B7C595BD2D858AE900219A27 /* ServiceAPI.swift */,
 				B7C595B62D81CA4400219A27 /* Extensions */,
 				B7C595B22D81C62C00219A27 /* Ressources */,
 				B7C595B12D81C55800219A27 /* Info.plist */,
@@ -214,6 +229,8 @@
 				B7C595CF2D885EF800219A27 /* creerVendeurView.swift */,
 				B79B2B952D886B5300F35128 /* VendeurdetailView.swift */,
 				B79B2B9D2D899B3500F35128 /* SessionView.swift */,
+				B79B2BA42D8B088C00F35128 /* JeuxView.swift */,
+				B79B2BA62D8B319200F35128 /* FilterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,9 +380,12 @@
 				B7C595D02D885EF800219A27 /* creerVendeurView.swift in Sources */,
 				B7C595C42D8709F200219A27 /* Vendeur.swift in Sources */,
 				B7C595C62D870C4000219A27 /* Acheteur.swift in Sources */,
+				B79B2BA52D8B088C00F35128 /* JeuxView.swift in Sources */,
 				B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */,
 				B7C595C22D87068200219A27 /* Game.swift in Sources */,
+				B79B2BA72D8B319200F35128 /* FilterView.swift in Sources */,
 				B7C595B82D81CA6D00219A27 /* SwiftUI+font.swift in Sources */,
+				B79B2BA12D8B076B00F35128 /* ServiceTransactions.swift in Sources */,
 				B79B2B9E2D899B3500F35128 /* SessionView.swift in Sources */,
 				B79B2B962D886B5300F35128 /* VendeurdetailView.swift in Sources */,
 				B79B2B9C2D89975D00F35128 /* SessionViewModel.swift in Sources */,
