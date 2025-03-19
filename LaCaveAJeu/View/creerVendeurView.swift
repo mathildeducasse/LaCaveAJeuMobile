@@ -15,7 +15,7 @@ struct creerVendeurView: View {
     @State private var telephone : String = ""
     
     var body: some View {
-        let bleuclair = Color(red:121/255.0, green :178/255.0,blue: 218/255.0)
+        
         let blueweird = Color(red : 121/255.0,green: 178/255.0, blue:218/255.0)
         let bleufonce = Color(red: 45/255.0, green: 85/255.0,blue: 166/255.0)
         let bleutresclair = Color(red: 216/255.0, green: 239/255.0,blue: 255/255.0)

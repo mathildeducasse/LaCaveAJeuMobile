@@ -172,4 +172,64 @@ class APIService : ObservableObject{
             }
         }
 //------------------------------------------------------------------
+    
+//Session : --------------------------------------------------------
+    
+    func fetchNextSession(completion: @escaping (Session) -> Void ){
+        guard let url = URL(string : "\(baseURL)/session/nextsession") else {return}
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+                if let data = data {
+                    do {
+                        // Décoder un seul objet Session
+                        let decodedData = try JSONDecoder().decode(Session.self, from: data)
+                        DispatchQueue.main.async {
+                            completion(decodedData)
+                        }
+                    } catch {
+                        print("Erreur de décodage next : ", error)
+                    }
+                }
+            }.resume()
+    }
+    
+    
+    func fetchSessionEnCours(completion: @escaping (Session) -> Void ){
+        guard let url = URL(string : "\(baseURL)/session/encours") else {return}
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+                if let data = data {
+                    do {
+                        // Décoder un seul objet Session
+                        let decodedData = try JSONDecoder().decode(Session.self, from: data)
+                        DispatchQueue.main.async {
+                            completion(decodedData)
+                        }
+                    } catch {
+                        print("Erreur de décodage next : ", error)
+                    }
+                }
+            }.resume()
+    }
+
+    func fetchSession(completion: @escaping ([Session]) -> Void ){
+        guard let url = URL(string : "\(baseURL)/session") else {return}
+        
+        URLSession.shared.dataTask(with: url) {data, _, error in
+            if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode([Session].self, from:data)
+                    DispatchQueue.main.async {
+                        completion(decodedData)
+                    }
+                }catch{
+                    print("erreur de decodage  tout: ", error)
+                }
+            }
+            
+        }.resume()
+    }
+
+    
+//------------------------------------------------------------------
 }

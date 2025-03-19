@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = VendeurlViewModel()
     var body: some View {
         let redark = Color(red : 149/255.0, green :29/255.0, blue:25/255.0)
         NavigationView{
@@ -24,7 +25,7 @@ struct ContentView: View {
                         .scaledToFit()
                         .clipped()
                     
-                    CountdownView()
+                    SessionView()
                         .padding(.bottom, 60)
                     
                     NavigationLink(destination: loginGestionnaireView()) {
