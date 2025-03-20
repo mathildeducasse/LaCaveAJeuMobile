@@ -34,6 +34,7 @@
 		B7C595CB2D881E5E00219A27 /* TableauDeBordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595CA2D881E5E00219A27 /* TableauDeBordView.swift */; };
 		B7C595CE2D882DA500219A27 /* VendeurIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */; };
 		B7C595D02D885EF800219A27 /* creerVendeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595CF2D885EF800219A27 /* creerVendeurView.swift */; };
+		B7D799CD2D8C159A00583684 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799CC2D8C159A00583684 /* Categorie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		B7C595CA2D881E5E00219A27 /* TableauDeBordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableauDeBordView.swift; sourceTree = "<group>"; };
 		B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendeurIViewModel.swift; sourceTree = "<group>"; };
 		B7C595CF2D885EF800219A27 /* creerVendeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creerVendeurView.swift; sourceTree = "<group>"; };
+		B7D799CC2D8C159A00583684 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				B7C595C32D8709F200219A27 /* Vendeur.swift */,
 				B7C595C52D870C4000219A27 /* Acheteur.swift */,
 				B79B2B992D89948700F35128 /* Session.swift */,
+				B7D799CC2D8C159A00583684 /* Categorie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				B79B2B9E2D899B3500F35128 /* SessionView.swift in Sources */,
 				B79B2B962D886B5300F35128 /* VendeurdetailView.swift in Sources */,
 				B79B2B9C2D89975D00F35128 /* SessionViewModel.swift in Sources */,
+				B7D799CD2D8C159A00583684 /* Categorie.swift in Sources */,
 				B7C595CB2D881E5E00219A27 /* TableauDeBordView.swift in Sources */,
 				B7C595C82D8759C400219A27 /* VendeurView.swift in Sources */,
 				B7C595CE2D882DA500219A27 /* VendeurIViewModel.swift in Sources */,

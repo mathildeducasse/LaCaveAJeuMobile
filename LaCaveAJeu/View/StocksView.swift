@@ -12,7 +12,7 @@ import SwiftUI
 
 
 struct StocksView: View {
-    @State private var showFilters = false
+    @State var showFilters = false
     @StateObject private var viewModel = JeuxViewModel()
     @StateObject private var viewModelVend = VendeurlViewModel()
     @State private var proprietaire : String? = nil
@@ -65,7 +65,7 @@ struct StocksView: View {
 
                 // Affichage conditionnel des filtres
                 if showFilters {
-                    FilterView()
+                    FilterView(viewModel : viewModel)
                             }
                 Spacer().frame(height: 12);
                 // Liste des jeux

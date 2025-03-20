@@ -10,7 +10,7 @@ import SwiftUI
 
 class JeuxViewModel: ObservableObject {
     @Published var games: [Game] = []
-    @Published var categories : [String] = []
+    @Published var categories : [Categorie] = []
     private let apiservice = APIService()
     
     
@@ -32,11 +32,13 @@ class JeuxViewModel: ObservableObject {
        }
     
     func getCategories() {
-        fetchGame()
-        for game in games {
-            print(game.categories)
-            categories.append(contentsOf: game.categories)
+        apiservice.fetchCategories() {[weak self] categorie in
+            DispatchQueue.main.async {
+                
+                self?.categories = categorie
             }
+            
+        }
     }
     
     func addGame(_ game : Game){

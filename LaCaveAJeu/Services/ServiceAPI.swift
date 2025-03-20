@@ -138,55 +138,46 @@ class APIService : ObservableObject{
         }.resume()
     }
     
-    func fetchFilteredGames(proprietaire : String?, prix_min : String? , prix_max : String?,categorie : [String],intitule : String? ,statut : String? , editeur : String? ,quantites : String?, completion: @escaping ([Game]) -> Void) {
-        var urlComponents = URLComponents(string : "\(baseURL)/jeu/filtered")
+    func fetchFilteredGames(proprietaire: String?, prix_min: String?, prix_max: String?, categorie: [String], intitule: String?, statut: String?, editeur: String?, quantites: String?, completion: @escaping ([Game]) -> Void) {
         
-        var queryItems: [URLQueryItem] = []
-        //On prepare les filtres demandé pour le body
-        if (proprietaire != nil){
-            queryItems.append(URLQueryItem(name: "proprietaire", value: proprietaire))
-        }
-        if (prix_min != nil){
-            queryItems.append(URLQueryItem(name: "prix_min", value: prix_min))
-        }
-        if (prix_max != nil){
-            queryItems.append(URLQueryItem(name: "prix_max", value: prix_max))
-        }
-        if (!categorie.isEmpty){
-            queryItems.append(URLQueryItem(name: "categories", value: "\(categorie)"))
-        }
-        if (intitule != nil){
-            queryItems.append(URLQueryItem(name: "intitule", value: intitule))
-        }
-        if (statut != nil){
-            queryItems.append(URLQueryItem(name: "statut", value: statut))
-        }
-        if (editeur != nil){
-            queryItems.append(URLQueryItem(name: "editeur", value: editeur))
-        }
-        if (quantites != nil){
-            queryItems.append(URLQueryItem(name: "quantites", value: quantites))
+        guard let url = URL(string: "\(baseURL)/jeu/filtered") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Construction du body JSON sans valeurs nulles
+        var body: [String: Any] = [:]
+        
+        if let proprietaire = proprietaire { body["proprietaire"] = proprietaire }
+        if let prix_min = prix_min { body["prix_min"] = prix_min }
+        if let prix_max = prix_max { body["prix_max"] = prix_max }
+        if !categorie.isEmpty { body["categories"] = categorie }
+        if let intitule = intitule { body["intitule"] = intitule }
+        if let statut = statut { body["statut"] = statut }
+        if let editeur = editeur { body["editeur"] = editeur }
+        if let quantites = quantites { body["quantites"] = quantites }
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        } catch {
+            print("Erreur lors de la conversion du body en JSON :", error)
+            return
         }
         
-        urlComponents?.queryItems = queryItems
-        
-        guard let url = urlComponents?.url else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data {
-                      do {
-                         let json = try JSONSerialization.jsonObject(with: data, options: [])
-               //          print("Réponse brute du backend : \(json)")
-                          let decodedData = try JSONDecoder().decode([Game].self, from: data)
-                          DispatchQueue.main.async {
-                            completion(decodedData)
-                               }
-                        }catch {
-                            print("Erreur de décodage pour jeux filtrés :", error)
-                                }
-                           }
-             }.resume()
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode([Game].self, from: data)
+                    DispatchQueue.main.async {
+                        completion(decodedData)
+                    }
+                } catch {
+                    print("Erreur de décodage pour jeux filtrés :", error)
+                }
+            }
+        }.resume()
     }
-    
     
     func addGame(_ game : Game) {
             guard let url = URL(string : "\(baseURL)/jeu") else {return}
@@ -223,19 +214,19 @@ class APIService : ObservableObject{
     
 //Catégorie : ------------------------------------------------------
     
-    func fetchCategories(completion: @escaping ([Cate]) -> Void ){
+    func fetchCategories(completion: @escaping ([Categorie]) -> Void ){
         guard let url = URL(string : "\(baseURL)/categorie") else {return}
         
         URLSession.shared.dataTask(with: url) { data, _, error in
                 if let data = data {
                     do {
                         // Décoder un seul objet Session
-                        let decodedData = try JSONDecoder().decode([Cate].self, from: data)
+                        let decodedData = try JSONDecoder().decode([Categorie].self, from: data)
                         DispatchQueue.main.async {
                             completion(decodedData)
                         }
                     } catch {
-                        print("Erreur de décodage next : ", error)
+                        print("Erreur de décodage cate : ", error)
                     }
                 }
             }.resume()
