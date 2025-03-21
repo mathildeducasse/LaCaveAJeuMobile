@@ -29,11 +29,11 @@ struct TransactionsView: View {
                 }
                 else if let acheteur = transaction.acheteur{
                     
-                    if let prop = transaction.jeux[0].vendeur {
+                    let prop = transaction.jeux[0].vendeur
                         Text("\(prop)\(multipleVendeurs()) —>  \(acheteur)")
                             .font(.subheadline)
                         .foregroundColor(bluee)
-                    }
+                    
                 }
             }
             Spacer()
