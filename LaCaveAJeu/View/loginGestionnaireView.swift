@@ -90,3 +90,8 @@ struct loginGestionnaireView: View {
         }
     }
 }
+struct loginGestionnaireView_Previews: PreviewProvider {
+    static var previews: some View {
+        loginGestionnaireView()
+    }
+}

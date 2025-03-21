@@ -18,11 +18,11 @@ class LoginViewModel: ObservableObject {
                 self.isAuthenticated = true
                 self.errorMessage = nil
                 UserDefaults.standard.set(token, forKey: "userToken")
-                print("✅ Token reçu : \(token)")
+                print("Token reçu : \(token)")
             case .failure(let error):
                 self.isAuthenticated = false
-                self.errorMessage = "❌ Erreur : \(error.localizedDescription)"
-                print("❌ Login échoué : \(error)")
+                self.errorMessage = "Erreur : \(error.localizedDescription)"
+                print(" Login échoué : \(error)")
             }
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7552EF12D8D7BA000F8B542 /* GestionnaireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7552EF02D8D7BA000F8B542 /* GestionnaireService.swift */; };
+		B7552EF32D8D7BB000F8B542 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7552EF22D8D7BB000F8B542 /* LoginViewModel.swift */; };
 		B79B2B962D886B5300F35128 /* VendeurdetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B952D886B5300F35128 /* VendeurdetailView.swift */; };
 		B79B2B982D8887F900F35128 /* JeuxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B972D8887F900F35128 /* JeuxViewModel.swift */; };
 		B79B2B9A2D89948700F35128 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B992D89948700F35128 /* Session.swift */; };
@@ -64,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7552EF02D8D7BA000F8B542 /* GestionnaireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestionnaireService.swift; sourceTree = "<group>"; };
+		B7552EF22D8D7BB000F8B542 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B79B2B952D886B5300F35128 /* VendeurdetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendeurdetailView.swift; sourceTree = "<group>"; };
 		B79B2B972D8887F900F35128 /* JeuxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxViewModel.swift; sourceTree = "<group>"; };
 		B79B2B992D89948700F35128 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		B79B2B9F2D8B073000F35128 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B7552EF02D8D7BA000F8B542 /* GestionnaireService.swift */,
 				B7C595BD2D858AE900219A27 /* ServiceAPI.swift */,
 				B79B2BA02D8B076B00F35128 /* ServiceTransactions.swift */,
 				B7D799DA2D8D608F00583684 /* AcheteurService.swift */,
@@ -266,6 +271,7 @@
 		B7C595CC2D882D8500219A27 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B7552EF22D8D7BB000F8B542 /* LoginViewModel.swift */,
 				B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */,
 				B79B2B972D8887F900F35128 /* JeuxViewModel.swift */,
 				B79B2B9B2D89975D00F35128 /* SessionViewModel.swift */,
@@ -408,6 +414,7 @@
 			files = (
 				B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */,
 				B7C595D02D885EF800219A27 /* creerVendeurView.swift in Sources */,
+				B7552EF32D8D7BB000F8B542 /* LoginViewModel.swift in Sources */,
 				B7C595C42D8709F200219A27 /* Vendeur.swift in Sources */,
 				B7C595C62D870C4000219A27 /* Acheteur.swift in Sources */,
 				B79B2BA52D8B088C00F35128 /* JeuxView.swift in Sources */,
@@ -419,6 +426,7 @@
 				B79B2B9E2D899B3500F35128 /* SessionView.swift in Sources */,
 				B79B2B962D886B5300F35128 /* VendeurdetailView.swift in Sources */,
 				B79B2B9C2D89975D00F35128 /* SessionViewModel.swift in Sources */,
+				B7552EF12D8D7BA000F8B542 /* GestionnaireService.swift in Sources */,
 				B7D799DB2D8D608F00583684 /* AcheteurService.swift in Sources */,
 				B7D799CD2D8C159A00583684 /* Categorie.swift in Sources */,
 				B7D799DD2D8D611100583684 /* AcheteurViewModel.swift in Sources */,
