@@ -10,51 +10,23 @@ class LoginViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 
-    func login() {
-        guard let url = URL(string: "https://awiback-30abadc2c48e.herokuapp.com/api/gestionnaire/login") else {
-            errorMessage = "URL invalide"
-            return
-        }
-
-        let body: [String: String] = [
-            "pseudo": pseudo,
-            "mot_de_passe": motDePasse
-        ]
-
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: body) else {
-            errorMessage = "Erreur encodage JSON"
-            return
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonData
-
-        URLSession.shared.dataTaskPublisher(for: request)
-            .tryMap { output -> Data in
-                guard let response = output.response as? HTTPURLResponse,
-                      response.statusCode == 200 else {
-                    throw URLError(.badServerResponse)
-                }
-                return output.data
-            }
-            .decode(type: LoginResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                if case let .failure(error) = completion {
-                    self.errorMessage = "Erreur: \(error.localizedDescription)"
-                    self.isAuthenticated = false
-                }
-            } receiveValue: { response in
-                self.token = response.token
+        func login() {
+        GestionnaireService.shared.login(pseudo: pseudo, motDePasse: motDePasse) { result in
+            switch result {
+            case .success(let token):
+                self.token = token
                 self.isAuthenticated = true
                 self.errorMessage = nil
-                UserDefaults.standard.set(response.token, forKey: "userToken") // Sauvegarde du token
-                print("Token reçu: \(response.token)")
+                UserDefaults.standard.set(token, forKey: "userToken")
+                print("✅ Token reçu : \(token)")
+            case .failure(let error):
+                self.isAuthenticated = false
+                self.errorMessage = "❌ Erreur : \(error.localizedDescription)"
+                print("❌ Login échoué : \(error)")
             }
-            .store(in: &cancellables)
+        }
     }
+
 }
 
 struct LoginResponse: Codable {
