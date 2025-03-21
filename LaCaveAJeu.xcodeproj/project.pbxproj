@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		B7552EF12D8D7BA000F8B542 /* GestionnaireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7552EF02D8D7BA000F8B542 /* GestionnaireService.swift */; };
 		B7552EF32D8D7BB000F8B542 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7552EF22D8D7BB000F8B542 /* LoginViewModel.swift */; };
-		B7552EF72D8D851100F8B542 /* GestionnaireSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7552EF62D8D851100F8B542 /* GestionnaireSession.swift */; };
 		B7552EF52D8D7E6B00F8B542 /* VentesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7552EF42D8D7E6B00F8B542 /* VentesViewModel.swift */; };
+		B7552EF72D8D851100F8B542 /* GestionnaireSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7552EF62D8D851100F8B542 /* GestionnaireSession.swift */; };
 		B79B2B962D886B5300F35128 /* VendeurdetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B952D886B5300F35128 /* VendeurdetailView.swift */; };
 		B79B2B982D8887F900F35128 /* JeuxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B972D8887F900F35128 /* JeuxViewModel.swift */; };
 		B79B2B9A2D89948700F35128 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2B992D89948700F35128 /* Session.swift */; };
@@ -70,8 +70,8 @@
 /* Begin PBXFileReference section */
 		B7552EF02D8D7BA000F8B542 /* GestionnaireService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestionnaireService.swift; sourceTree = "<group>"; };
 		B7552EF22D8D7BB000F8B542 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		B7552EF62D8D851100F8B542 /* GestionnaireSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestionnaireSession.swift; sourceTree = "<group>"; };
 		B7552EF42D8D7E6B00F8B542 /* VentesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentesViewModel.swift; sourceTree = "<group>"; };
+		B7552EF62D8D851100F8B542 /* GestionnaireSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestionnaireSession.swift; sourceTree = "<group>"; };
 		B79B2B952D886B5300F35128 /* VendeurdetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendeurdetailView.swift; sourceTree = "<group>"; };
 		B79B2B972D8887F900F35128 /* JeuxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxViewModel.swift; sourceTree = "<group>"; };
 		B79B2B992D89948700F35128 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -148,7 +148,6 @@
 				B79B2BA02D8B076B00F35128 /* ServiceTransactions.swift */,
 				B7552EF62D8D851100F8B542 /* GestionnaireSession.swift */,
 				B7D799DA2D8D608F00583684 /* AcheteurService.swift */,
-				B7552EF42D8D7E6B00F8B542 /* VentesViewModel.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -277,6 +276,7 @@
 		B7C595CC2D882D8500219A27 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B7552EF42D8D7E6B00F8B542 /* VentesViewModel.swift */,
 				B7552EF22D8D7BB000F8B542 /* LoginViewModel.swift */,
 				B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */,
 				B79B2B972D8887F900F35128 /* JeuxViewModel.swift */,
@@ -611,6 +611,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LaCaveAJeu/Preview Content\"";
+				DEVELOPMENT_TEAM = 8SWSK3WA48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LaCaveAJeu/Info.plist;
@@ -640,6 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LaCaveAJeu/Preview Content\"";
+				DEVELOPMENT_TEAM = 8SWSK3WA48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LaCaveAJeu/Info.plist;
