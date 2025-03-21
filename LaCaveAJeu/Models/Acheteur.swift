@@ -8,7 +8,7 @@
 import Foundation
 
 struct Acheteur : Codable, Identifiable {
-    var id : String
+    var id : String?
     var nom : String
     var prenom  : String
     var email : String
@@ -19,7 +19,7 @@ struct Acheteur : Codable, Identifiable {
         case nom, prenom, email, adresse
     }
     
-    init(id: String, nom: String, prenom: String, email: String, adresse: String?) {
+    init(id: String?, nom: String, prenom: String, email: String, adresse: String?) {
         self.id = id
         self.nom = nom
         self.prenom = prenom
@@ -30,50 +30,7 @@ struct Acheteur : Codable, Identifiable {
         
     }
     
-    //Getters :
     
-    var getId : String {
-        return id
-    }
-    
-    var getNom : String {
-        return nom
-    }
-    
-    var getPrenom : String {
-        return nom
-    }
-    
-    var getEmail : String {
-        return email
-    }
-    
-    var getAdresse : String? {
-        return adresse
-    }
-    
-    
-    //Setters :
-    
-    mutating func setId (_ id : String){
-        self.id = id
-    }
-    
-    mutating func setNom (_ nom : String){
-        self.nom = nom
-    }
-    
-    mutating func setPrenom (_ prenom : String){
-        self.prenom = prenom
-    }
-    
-    mutating func setEmail(_ email : String){
-        self.email = email
-    }
-    
-    mutating func setAdresse (_ adresse : String){
-        self.adresse = adresse
-    }
     
 }
 

@@ -11,7 +11,7 @@ struct Transaction : Codable, Identifiable{
     var id : String?
     var statut : String
     var gestionnaire : String
-    var date_transaction : String
+    var date_transaction : String?
     var prix_total : Float
     var frais: Float
     var remise : Float
@@ -20,7 +20,7 @@ struct Transaction : Codable, Identifiable{
     var jeux : [JeuTr]
     
     
-    init(id: String?, statut: String, gestionnaire: String, date_transaction: String, prix_total: Float, frais: Float, remise: Float, proprietaire: String?, acheteur : String?, jeux: [JeuTr]) {
+    init(id: String?, statut: String, gestionnaire: String, date_transaction: String?, prix_total: Float, frais: Float, remise: Float, proprietaire: String?, acheteur : String?, jeux: [JeuTr]) {
         self.id = id
         self.statut = statut
         self.gestionnaire = gestionnaire
