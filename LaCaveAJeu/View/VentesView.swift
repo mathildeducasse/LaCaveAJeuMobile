@@ -37,34 +37,41 @@ struct VentesView: View {
             Spacer().frame(height: 10);
             VStack{
                 ScrollView{
-                    
+                    Spacer().frame(height: 30);
                     ForEach(viewModelJeux.games) { jeu in
                         VStack {
                             HStack{
                                 Text("\(jeu.intitule)").font(.headline)
+                                    .foregroundColor(bleufonce)
                                 Spacer()
-                            }
+                            }.padding(.top, 3)
+                                .padding(.leading, 10)
+                            HStack{
+                                Text("Vendeur : \(jeu.vendeur)").foregroundColor(bleufonce)
+                                Spacer()
+                            }.padding(.leading, 10)
                             HStack {
-                                Text("Stock: \(jeu.quantites)").font(.subheadline)
-                                Text("Prix: \(jeu.prix, specifier: "%.2f")€")
+                                Text("Stock : \(jeu.quantites)").font(.subheadline).foregroundColor(bleufonce)
+                                Text("Prix : \(jeu.prix, specifier: "%.2f")€").font(.subheadline).foregroundColor(bleufonce)
                                 Spacer()
-                            }
+                            }.padding(.leading, 10)
                             HStack{
                                 Stepper(value: Binding(
                                     
                                     get: { quantiteSelectionnee[jeu.id, default: 1] },
                                     set: { quantiteSelectionnee[jeu.id] = min($0, jeu.quantites) }
                                 ), in: 1...jeu.quantites) {
-                                    Text("Quantité: \(quantiteSelectionnee[jeu.id, default: 1])")
+                                    Text("Quantité:   \(quantiteSelectionnee[jeu.id, default: 1])").foregroundColor(bleufonce)
                                 }
                                 Button("Ajouter") {
                                     viewModel.ajouterAuPanier(jeu: jeu, quantite: quantiteSelectionnee[jeu.id, default: 1])
                                 }
-                            }
+                            }.padding(.horizontal, 10)
                             
                         }.background(bleutresclair)
                         .cornerRadius(10)
-                        .padding()
+                        .padding(.horizontal, 25.0)
+                        .padding(.vertical, 4)
                     }
                     
                     Text("Panier").font(.title).padding()
