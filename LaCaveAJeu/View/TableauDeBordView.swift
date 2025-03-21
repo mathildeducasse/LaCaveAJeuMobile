@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TableauDeBordView: View {
+    @State private var navigateToLogin = false
     var body: some View {
         let yellowlight = Color(red : 240/255.0,green: 230/255.0, blue:158/255.0)
         let bluefonce = Color(red : 45/255.0,green: 85/255.0, blue:166/255.0)
@@ -112,8 +113,16 @@ struct TableauDeBordView: View {
                 }.padding()
                 Spacer()
                 //Bouton se deconnecter
-                NavigationLink(destination: ContentView()) {
-                    Text("Se deconnecter")
+                Button(action: {
+                    GestionnaireSession.shared.logout { success in
+                        if success {
+                            // Redirection manuelle vers la page login
+                            // Ici on utilise un flag pour NavigationLink
+                            navigateToLogin = true
+                        }
+                    }
+                }) {
+                    Text("Se déconnecter")
                         .font(.system(size:15))
                         .foregroundColor(.black)
                         .padding(.vertical, 15.0)
@@ -121,6 +130,11 @@ struct TableauDeBordView: View {
                         .background(bleuclair)
                         .cornerRadius(10)
                 }
+
+                NavigationLink(destination: ContentView(), isActive: $navigateToLogin) {
+                    EmptyView()
+                }
+
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(yellowlight)
