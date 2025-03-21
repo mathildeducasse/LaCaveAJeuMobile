@@ -22,23 +22,6 @@ func decodeJWTToken(_ token: String) -> [String: Any]? {
     return payload
 }
 
-func logout(completion: @escaping (Bool) -> Void) {
-    guard let pseudo = self.pseudo else {
-        completion(false)
-        return
-    }
-
-    GestionnaireService.shared.logout(pseudo: pseudo) { result in
-        switch result {
-        case .success:
-            completion(true)
-        case .failure(let error):
-            print("❌ Erreur lors de la déconnexion : \(error)")
-            completion(false)
-        }
-    }
-}
-
 
 class GestionnaireSession {
     static let shared = GestionnaireSession()
@@ -65,5 +48,24 @@ class GestionnaireSession {
             return nil
         }
         return pseudo
+    }
+    
+    
+    
+    func logout(completion: @escaping (Bool) -> Void) {
+        guard let pseudo = self.pseudo else {
+            completion(false)
+            return
+        }
+
+        GestionnaireService.shared.logout(pseudo: pseudo) { result in
+            switch result {
+            case .success:
+                completion(true)
+            case .failure(let error):
+                print("Erreur lors de la déconnexion : \(error)")
+                completion(false)
+            }
+        }
     }
 }
