@@ -14,6 +14,8 @@ struct VentesView: View {
     @StateObject private var viewModelVentes = VendeurlViewModel()
     @StateObject private var viewModelAcheteur = AcheteurViewModel()
     @StateObject private var viewModelTransac = TransactionViewModel()
+    @State private var showAlert = false
+    @State private var showAlert2 = false
     @State private var nomAcheteur : String = ""
     @State private var prenomAcheteur : String = ""
     @State private var emailAcheteur : String = ""
@@ -137,11 +139,34 @@ struct VentesView: View {
                             }.background(yellowlight)
                             .cornerRadius(10)
                             .padding(.bottom, 15)
+                            .alert("Acheteur créée !", isPresented: $showAlert) {
+                                            Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
+                                        } message: {
+                                            Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
+                                        }
                             
                         }.background(bleutresclair)
                         .cornerRadius(10)
                         .padding(.horizontal, 25.0)
                         .padding(.vertical, 4)
+                        VStack{
+                            Text("Selectionner un acheteur : ")
+                                .font(.subheadline)
+                                .bold()
+                                .foregroundColor(yellowlight)
+                                
+                            Picker("acheteur",selection: $theID) {
+                                Text("Sans selection").tag("")
+                                ForEach(viewModelAcheteur.acheteurs) { acheteur in
+                                    if let idacheteur = acheteur.id {
+                                        Text("\(acheteur.nom) \(acheteur.prenom) ").tag("\(idacheteur)" as String)}
+                                }
+                                
+                            }
+                            .pickerStyle(MenuPickerStyle())
+                            .tint(yellowlight)
+                            Spacer()
+                        }
                         VStack{
                             Text("🛒 Panier :").padding()
                                 .font(.title3)
@@ -166,6 +191,11 @@ struct VentesView: View {
                         }.background(yellowlight)
                         .cornerRadius(10)
                         .padding(.bottom, 15)
+                        .alert("Acheteur créée !", isPresented: $showAlert2) {
+                                        Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
+                                    } message: {
+                                        Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
+                                    }
                         
                     }
                     
@@ -176,7 +206,8 @@ struct VentesView: View {
                     .shadow(radius: 6)
                     .onAppear {
                         viewModelVentes.fetchVendeurs()
-                        viewModelJeux.fetchGame()
+                            viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil)
+                        viewModelAcheteur.fetchAcheteurs()
                     }
                 Spacer()
             }.background(yellowlight)
@@ -188,22 +219,28 @@ struct VentesView: View {
     func handleCreate(){
         let acheteur : Acheteur = Acheteur(id: nil, nom: nomAcheteur, prenom: prenomAcheteur, email: emailAcheteur, adresse: adresseAcheteur)
         viewModelAcheteur.addAcheteur(acheteur)
-        print("acheteur.id : \(acheteur.id!)")
-        if let idAcheteur = acheteur.id{
-            theID = idAcheteur
+        if nomAcheteur != "" && prenomAcheteur != "" && emailAcheteur != "" && adresseAcheteur != ""{
+            showAlert = true
         }
+        
     }
     
     func handleDepot(){
         let prixTot = viewModel.getPrixPanier()
+        print("the id of acheteur ahh : " +  theID)
         var jeuxTr : [JeuTr] = []
         for item in viewModel.panier{
             let jeu : JeuTr = JeuTr(id: item.jeu.id, vendeur: item.jeu.vendeur, intitule: item.jeu.intitule,editeur : item.jeu.editeur, prix_unitaire: item.jeu.prix, categorie: item.jeu.categories, quantite: item.jeu.quantites)
             jeuxTr.append(jeu)
         }
-        let transaction : Transaction = Transaction(id: nil, statut: "depot", gestionnaire: "gest", date_transaction: nil, prix_total: prixTot, frais: 10, remise: 0, proprietaire: nil, acheteur : theID, jeux: jeuxTr)
-        viewModelTransac.addTransaction(transaction)
-    }
+        if let idgestionnaie = GestionnaireSession.shared.gestionnaireID{
+            
+            let transaction : Transaction = Transaction(id: nil, statut: "depot", gestionnaire: idgestionnaie, date_transaction: nil, prix_total: prixTot, frais: 10, remise: 0, proprietaire: nil, acheteur : theID, jeux: jeuxTr)
+                viewModelTransac.addTransaction(transaction)
+            showAlert2 = true
+            }else{
+            print("pas de gestionnaire connecté")
+        }}
 }
 
 struct VentesView_Previews: PreviewProvider {

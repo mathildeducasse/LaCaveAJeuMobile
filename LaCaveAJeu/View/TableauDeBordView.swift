@@ -66,7 +66,7 @@ struct TableauDeBordView: View {
                             .cornerRadius(10)}
                     }.padding()
                     VStack(spacing:20){
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: VentesView()) {
                             VStack{
                                 Spacer().frame(height: 40);
                                 Text("🛒")
