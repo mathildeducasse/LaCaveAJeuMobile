@@ -58,6 +58,11 @@ struct loginGestionnaireView: View {
                                 .cornerRadius(10)
                         }
 
+                        if let id = GestionnaireSession.shared.gestionnaireID {
+                            Text("ID du gestionnaire : \(id)").foregroundColor(.white)
+                        }
+
+
                         if let errorMessage = viewModel.errorMessage {
                             Text(errorMessage)
                                 .foregroundColor(.red)
