@@ -19,6 +19,7 @@
 		B79B2BA12D8B076B00F35128 /* ServiceTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2BA02D8B076B00F35128 /* ServiceTransactions.swift */; };
 		B79B2BA52D8B088C00F35128 /* JeuxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2BA42D8B088C00F35128 /* JeuxView.swift */; };
 		B79B2BA72D8B319200F35128 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2BA62D8B319200F35128 /* FilterView.swift */; };
+		B7A252902D8DD4F900CC53B5 /* DepotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2528F2D8DD4F900CC53B5 /* DepotView.swift */; };
 		B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */; };
 		B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595892D8186E000219A27 /* ContentView.swift */; };
 		B7C5958C2D8186E100219A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C5958B2D8186E100219A27 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		B79B2BA02D8B076B00F35128 /* ServiceTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTransactions.swift; sourceTree = "<group>"; };
 		B79B2BA42D8B088C00F35128 /* JeuxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxView.swift; sourceTree = "<group>"; };
 		B79B2BA62D8B319200F35128 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		B7A2528F2D8DD4F900CC53B5 /* DepotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepotView.swift; sourceTree = "<group>"; };
 		B7C595842D8186E000219A27 /* LaCaveAJeu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaCaveAJeu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuApp.swift; sourceTree = "<group>"; };
 		B7C595892D8186E000219A27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				B7D799D42D8C609100583684 /* TransactionsView.swift */,
 				B7D799D82D8C81C300583684 /* TransactionFiltresView.swift */,
 				B7D799DE2D8D6BEF00583684 /* VentesView.swift */,
+				B7A2528F2D8DD4F900CC53B5 /* DepotView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				B7C595CE2D882DA500219A27 /* VendeurIViewModel.swift in Sources */,
 				B7552EF52D8D7E6B00F8B542 /* VentesViewModel.swift in Sources */,
 				B7D799D52D8C609100583684 /* TransactionsView.swift in Sources */,
+				B7A252902D8DD4F900CC53B5 /* DepotView.swift in Sources */,
 				B7C595BA2D81D0CE00219A27 /* loginGestionnaireView.swift in Sources */,
 				B7D799DF2D8D6BEF00583684 /* VentesView.swift in Sources */,
 				B7552EF72D8D851100F8B542 /* GestionnaireSession.swift in Sources */,

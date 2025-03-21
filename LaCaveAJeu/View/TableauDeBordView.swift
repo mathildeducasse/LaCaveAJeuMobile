@@ -22,7 +22,7 @@ struct TableauDeBordView: View {
                 //Le menu
                 HStack(spacing:0){
                     VStack(spacing:20){
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: DepotView()) {
                             VStack{
                                 Spacer().frame(height: 40);
                                 Text("🎲")

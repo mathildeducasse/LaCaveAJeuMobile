@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct creerVendeurView: View {
-    @StateObject private var viewModel = VendeurlViewModel()
+    
+    @ObservedObject var viewModel : VendeurlViewModel
     @State private var nom : String = ""
     @State private var prenom : String = ""
     @State private var email : String = ""
@@ -83,9 +84,9 @@ struct creerVendeurView: View {
         telephone = ""
     }
 }
-    struct creerVendeurView_Previews: PreviewProvider {
-        static var previews: some View {
-            creerVendeurView()
-        }
-    }
+//    struct creerVendeurView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            creerVendeurView()
+//        }
+//    }
 

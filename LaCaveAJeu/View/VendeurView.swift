@@ -61,7 +61,7 @@ struct VendeurView: View {
                                 .padding([.top, .trailing], 10.0)
                         }
                         if showAdd {
-                            creerVendeurView()
+                            creerVendeurView(viewModel: viewModel)
                         }
                         ForEach($viewModel.vendeurs) { $vendeur in
                             NavigationLink(destination: VendeurdetailView(vendeur : $vendeur)){
