@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct VentesView: View {
+    @StateObject private var viewModel = VenteViewModel()
+    @State private var quantiteSelectionnee: [String?: Int] = [:]
     @StateObject private var viewModelJeux = JeuxViewModel()
     @StateObject private var viewModelVentes = VendeurlViewModel()
     let bleuclair = Color(red:121/255.0, green :178/255.0,blue: 218/255.0)
@@ -36,6 +38,44 @@ struct VentesView: View {
             VStack{
                 ScrollView{
                     
+                    ForEach(viewModelJeux.games) { jeu in
+                        VStack {
+                            HStack{
+                                Text("\(jeu.intitule)").font(.headline)
+                                Spacer()
+                            }
+                            HStack {
+                                Text("Stock: \(jeu.quantites)").font(.subheadline)
+                                Text("Prix: \(jeu.prix, specifier: "%.2f")€")
+                                Spacer()
+                            }
+                            HStack{
+                                Stepper(value: Binding(
+                                    
+                                    get: { quantiteSelectionnee[jeu.id, default: 1] },
+                                    set: { quantiteSelectionnee[jeu.id] = min($0, jeu.quantites) }
+                                ), in: 1...jeu.quantites) {
+                                    Text("Quantité: \(quantiteSelectionnee[jeu.id, default: 1])")
+                                }
+                                Button("Ajouter") {
+                                    viewModel.ajouterAuPanier(jeu: jeu, quantite: quantiteSelectionnee[jeu.id, default: 1])
+                                }
+                            }
+                            
+                        }.background(bleutresclair)
+                        .cornerRadius(10)
+                        .padding()
+                    }
+                    
+                    Text("Panier").font(.title).padding()
+                    ForEach(viewModel.panier){ item in
+                        HStack {
+                            Text("\(item.jeu.intitule) x\(item.quantite)")
+                            Spacer()
+                            Text("\(Double(item.quantite) * item.jeu.prix, specifier: "%.2f")€")
+                                 }
+                    }
+                     
                 }
             }.frame(width: 340, height: 600)
                 .background(bleufonce)
@@ -44,9 +84,11 @@ struct VentesView: View {
                 .shadow(radius: 6)
                 .onAppear {
                     viewModelVentes.fetchVendeurs()
+                    viewModelJeux.fetchGame()
                 }
         }.background(yellowlight)
             .edgesIgnoringSafeArea(.all)
+        
         
         
     }
