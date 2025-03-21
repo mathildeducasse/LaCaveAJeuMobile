@@ -35,6 +35,15 @@
 		B7C595CE2D882DA500219A27 /* VendeurIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */; };
 		B7C595D02D885EF800219A27 /* creerVendeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595CF2D885EF800219A27 /* creerVendeurView.swift */; };
 		B7D799CD2D8C159A00583684 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799CC2D8C159A00583684 /* Categorie.swift */; };
+		B7D799CF2D8C4B6C00583684 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799CE2D8C4B6C00583684 /* Transaction.swift */; };
+		B7D799D12D8C52ED00583684 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799D02D8C52ED00583684 /* TransactionViewModel.swift */; };
+		B7D799D32D8C54D500583684 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799D22D8C54D500583684 /* TransactionView.swift */; };
+		B7D799D52D8C609100583684 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799D42D8C609100583684 /* TransactionsView.swift */; };
+		B7D799D72D8C7B3F00583684 /* JeuTr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799D62D8C7B3F00583684 /* JeuTr.swift */; };
+		B7D799D92D8C81C300583684 /* TransactionFiltresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799D82D8C81C300583684 /* TransactionFiltresView.swift */; };
+		B7D799DB2D8D608F00583684 /* AcheteurService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799DA2D8D608F00583684 /* AcheteurService.swift */; };
+		B7D799DD2D8D611100583684 /* AcheteurViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799DC2D8D611000583684 /* AcheteurViewModel.swift */; };
+		B7D799DF2D8D6BEF00583684 /* VentesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D799DE2D8D6BEF00583684 /* VentesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +96,15 @@
 		B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendeurIViewModel.swift; sourceTree = "<group>"; };
 		B7C595CF2D885EF800219A27 /* creerVendeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creerVendeurView.swift; sourceTree = "<group>"; };
 		B7D799CC2D8C159A00583684 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
+		B7D799CE2D8C4B6C00583684 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		B7D799D02D8C52ED00583684 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		B7D799D22D8C54D500583684 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		B7D799D42D8C609100583684 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		B7D799D62D8C7B3F00583684 /* JeuTr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuTr.swift; sourceTree = "<group>"; };
+		B7D799D82D8C81C300583684 /* TransactionFiltresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFiltresView.swift; sourceTree = "<group>"; };
+		B7D799DA2D8D608F00583684 /* AcheteurService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheteurService.swift; sourceTree = "<group>"; };
+		B7D799DC2D8D611000583684 /* AcheteurViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheteurViewModel.swift; sourceTree = "<group>"; };
+		B7D799DE2D8D6BEF00583684 /* VentesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +137,7 @@
 			children = (
 				B7C595BD2D858AE900219A27 /* ServiceAPI.swift */,
 				B79B2BA02D8B076B00F35128 /* ServiceTransactions.swift */,
+				B7D799DA2D8D608F00583684 /* AcheteurService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -217,6 +236,8 @@
 				B7C595C52D870C4000219A27 /* Acheteur.swift */,
 				B79B2B992D89948700F35128 /* Session.swift */,
 				B7D799CC2D8C159A00583684 /* Categorie.swift */,
+				B7D799CE2D8C4B6C00583684 /* Transaction.swift */,
+				B7D799D62D8C7B3F00583684 /* JeuTr.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +255,10 @@
 				B79B2B9D2D899B3500F35128 /* SessionView.swift */,
 				B79B2BA42D8B088C00F35128 /* JeuxView.swift */,
 				B79B2BA62D8B319200F35128 /* FilterView.swift */,
+				B7D799D22D8C54D500583684 /* TransactionView.swift */,
+				B7D799D42D8C609100583684 /* TransactionsView.swift */,
+				B7D799D82D8C81C300583684 /* TransactionFiltresView.swift */,
+				B7D799DE2D8D6BEF00583684 /* VentesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +269,8 @@
 				B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */,
 				B79B2B972D8887F900F35128 /* JeuxViewModel.swift */,
 				B79B2B9B2D89975D00F35128 /* SessionViewModel.swift */,
+				B7D799D02D8C52ED00583684 /* TransactionViewModel.swift */,
+				B7D799DC2D8D611000583684 /* AcheteurViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -392,15 +419,24 @@
 				B79B2B9E2D899B3500F35128 /* SessionView.swift in Sources */,
 				B79B2B962D886B5300F35128 /* VendeurdetailView.swift in Sources */,
 				B79B2B9C2D89975D00F35128 /* SessionViewModel.swift in Sources */,
+				B7D799DB2D8D608F00583684 /* AcheteurService.swift in Sources */,
 				B7D799CD2D8C159A00583684 /* Categorie.swift in Sources */,
+				B7D799DD2D8D611100583684 /* AcheteurViewModel.swift in Sources */,
+				B7D799CF2D8C4B6C00583684 /* Transaction.swift in Sources */,
 				B7C595CB2D881E5E00219A27 /* TableauDeBordView.swift in Sources */,
 				B7C595C82D8759C400219A27 /* VendeurView.swift in Sources */,
+				B7D799D32D8C54D500583684 /* TransactionView.swift in Sources */,
 				B7C595CE2D882DA500219A27 /* VendeurIViewModel.swift in Sources */,
+				B7D799D52D8C609100583684 /* TransactionsView.swift in Sources */,
 				B7C595BA2D81D0CE00219A27 /* loginGestionnaireView.swift in Sources */,
+				B7D799DF2D8D6BEF00583684 /* VentesView.swift in Sources */,
 				B79B2B9A2D89948700F35128 /* Session.swift in Sources */,
+				B7D799D72D8C7B3F00583684 /* JeuTr.swift in Sources */,
 				B7C595BE2D858AE900219A27 /* ServiceAPI.swift in Sources */,
 				B79B2B982D8887F900F35128 /* JeuxViewModel.swift in Sources */,
+				B7D799D92D8C81C300583684 /* TransactionFiltresView.swift in Sources */,
 				B7C595BC2D81D19100219A27 /* StocksView.swift in Sources */,
+				B7D799D12D8C52ED00583684 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

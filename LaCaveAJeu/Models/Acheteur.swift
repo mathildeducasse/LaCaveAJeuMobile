@@ -7,13 +7,17 @@
 
 import Foundation
 
-struct Acheteur : Codable{
+struct Acheteur : Codable, Identifiable {
     var id : String
     var nom : String
     var prenom  : String
     var email : String
     var adresse : String? = nil
     
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case nom, prenom, email, adresse
+    }
     
     init(id: String, nom: String, prenom: String, email: String, adresse: String?) {
         self.id = id

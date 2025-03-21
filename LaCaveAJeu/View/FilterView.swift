@@ -27,9 +27,9 @@ struct FilterView: View {
             ScrollView {
                 Picker("Statut", selection: $statut) {
                     Text("---Statuts---").tag(nil as String?)
-                    Text("pas disponible").tag("pas disponible")
-                    Text("disponible").tag("disponible")
-                    Text("vendu").tag("vendu")
+                    Text("pas disponible").tag("pas disponible" as String?)
+                    Text("disponible").tag("disponible" as String?)
+                    Text("vendu").tag("vendu" as String?)
                 }.pickerStyle(WheelPickerStyle())
                 
                 HStack{
@@ -65,6 +65,8 @@ struct FilterView: View {
                     
                     Spacer()
                 }
+                
+                
                 HStack{
                     Text("Prix min:")
                         .font(.subheadline)
