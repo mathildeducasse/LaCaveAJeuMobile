@@ -35,14 +35,11 @@ class TypeJeuViewModel: ObservableObject {
     
     
     func fetchTypeJeuxById(id: String, completion: @escaping (TypeJeu?) -> Void) {
-                // Simuler un appel réseau asynchrone
-                DispatchQueue.global().async {
-                    let typeJeu = self.typeJeuById[id] // Simuler un retour depuis une API
-                    DispatchQueue.main.async {
-                        completion(typeJeu)
-                    }
-                }
-            }
+        apiservice.fetchTypeJeuxById(id: id) { typeJeu in
+            completion(typeJeu)
+        }
+    }
+
     
     
 }
