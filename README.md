@@ -5,6 +5,7 @@ Aucun module n'est nécessaire au fonctionnement de l'application. Le back-end d
 
 Version Apple : 18.3.2
 
-#Se connecter
-identifiant : gest
+# Se connecter
+
+identifiant : gest 
 mot de passe : 123
