@@ -27,6 +27,9 @@
 		B7A2529D2D916B9200CC53B5 /* AjoutJeuDepotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2529C2D916B9200CC53B5 /* AjoutJeuDepotView.swift */; };
 		B7A2529F2D93225200CC53B5 /* JeuDepot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2529E2D93224000CC53B5 /* JeuDepot.swift */; };
 		B7A252A12D9324E000CC53B5 /* Depot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252A02D9324D900CC53B5 /* Depot.swift */; };
+		B7A252A32D9328CE00CC53B5 /* BilanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252A22D9328CE00CC53B5 /* BilanViewModel.swift */; };
+		B7A252A52D9328DB00CC53B5 /* BilanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252A42D9328DB00CC53B5 /* BilanView.swift */; };
+		B7A252A72D9328F200CC53B5 /* BilanVendeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252A62D9328F200CC53B5 /* BilanVendeur.swift */; };
 		B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */; };
 		B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595892D8186E000219A27 /* ContentView.swift */; };
 		B7C5958C2D8186E100219A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C5958B2D8186E100219A27 /* Assets.xcassets */; };
@@ -96,6 +99,9 @@
 		B7A2529C2D916B9200CC53B5 /* AjoutJeuDepotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjoutJeuDepotView.swift; sourceTree = "<group>"; };
 		B7A2529E2D93224000CC53B5 /* JeuDepot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuDepot.swift; sourceTree = "<group>"; };
 		B7A252A02D9324D900CC53B5 /* Depot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Depot.swift; sourceTree = "<group>"; };
+		B7A252A22D9328CE00CC53B5 /* BilanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilanViewModel.swift; sourceTree = "<group>"; };
+		B7A252A42D9328DB00CC53B5 /* BilanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilanView.swift; sourceTree = "<group>"; };
+		B7A252A62D9328F200CC53B5 /* BilanVendeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilanVendeur.swift; sourceTree = "<group>"; };
 		B7C595842D8186E000219A27 /* LaCaveAJeu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaCaveAJeu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuApp.swift; sourceTree = "<group>"; };
 		B7C595892D8186E000219A27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -257,6 +263,7 @@
 		B7C595C02D87065F00219A27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B7A252A62D9328F200CC53B5 /* BilanVendeur.swift */,
 				B7A252A02D9324D900CC53B5 /* Depot.swift */,
 				B7A2529E2D93224000CC53B5 /* JeuDepot.swift */,
 				B7C595C12D87068200219A27 /* Game.swift */,
@@ -275,6 +282,7 @@
 		B7C595C92D881E2C00219A27 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B7A252A42D9328DB00CC53B5 /* BilanView.swift */,
 				B7C595C72D8759C400219A27 /* VendeurView.swift */,
 				B7C595BB2D81D19100219A27 /* StocksView.swift */,
 				B7C595B92D81D0CE00219A27 /* loginGestionnaireView.swift */,
@@ -298,6 +306,7 @@
 		B7C595CC2D882D8500219A27 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B7A252A22D9328CE00CC53B5 /* BilanViewModel.swift */,
 				B7552EF42D8D7E6B00F8B542 /* VentesViewModel.swift */,
 				B7552EF22D8D7BB000F8B542 /* LoginViewModel.swift */,
 				B7C595CD2D882DA500219A27 /* VendeurIViewModel.swift */,
@@ -471,11 +480,14 @@
 				B7D799D32D8C54D500583684 /* TransactionView.swift in Sources */,
 				B7A2529F2D93225200CC53B5 /* JeuDepot.swift in Sources */,
 				B7C595CE2D882DA500219A27 /* VendeurIViewModel.swift in Sources */,
+				B7A252A32D9328CE00CC53B5 /* BilanViewModel.swift in Sources */,
 				B7552EF52D8D7E6B00F8B542 /* VentesViewModel.swift in Sources */,
 				B7A252A12D9324E000CC53B5 /* Depot.swift in Sources */,
 				B7D799D52D8C609100583684 /* TransactionsView.swift in Sources */,
 				B7A252902D8DD4F900CC53B5 /* DepotView.swift in Sources */,
 				B7C595BA2D81D0CE00219A27 /* loginGestionnaireView.swift in Sources */,
+				B7A252A52D9328DB00CC53B5 /* BilanView.swift in Sources */,
+				B7A252A72D9328F200CC53B5 /* BilanVendeur.swift in Sources */,
 				B7D799DF2D8D6BEF00583684 /* VentesView.swift in Sources */,
 				B7552EF72D8D851100F8B542 /* GestionnaireSession.swift in Sources */,
 				B79B2B9A2D89948700F35128 /* Session.swift in Sources */,

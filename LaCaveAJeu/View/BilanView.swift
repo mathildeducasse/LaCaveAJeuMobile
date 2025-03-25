@@ -1,3 +1,6 @@
+
+import SwiftUI
+
 struct BilanView: View {
     @StateObject private var viewModel = BilanViewModel()
     @StateObject private var vendeurVM = VendeurlViewModel()
@@ -41,8 +44,7 @@ struct BilanView: View {
     }
 }
 
-struct BilanView_Previews: PreviewProvider {
-    static var previews: some View {
-        BilanView()
-    }
+
+#Preview {
+    BilanView()
 }

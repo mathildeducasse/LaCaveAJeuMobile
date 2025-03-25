@@ -174,7 +174,7 @@ struct DepotView: View {
             
             
             //viewModelTransac.addTransaction(transaction)
-            showAlert2 = true
+            //showAlert = true
             }else{
             print("pas de gestionnaire connecté")
         }

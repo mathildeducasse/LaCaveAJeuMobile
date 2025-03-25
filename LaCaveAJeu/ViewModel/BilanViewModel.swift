@@ -32,16 +32,15 @@ class BilanViewModel: ObservableObject {
             for transac in transactions {
                 if transac.statut == "depot" {
                     nbDepots += 1
-                    fraisTotal += transac.frais - transac.remise
+                    fraisTotal += Double(transac.frais - transac.remise)
                 } else if transac.statut == "vente" {
                     nbVentes += 1
                     for jeu in transac.jeux {
                         // On filtre les jeux appartenant à ce vendeur
-                        if jeu.vendeur == nil { continue }
-                        if jeu.vendeurId == vendeurId || jeu.vendeur == vendeurId {
+                        if jeu.vendeur == vendeurId {
                             jeuxVendus += jeu.quantite
                             portefeuilleTotal += Double(jeu.quantite) * jeu.prix_unitaire
-                        }
+                        
                     }
                 }
             }
