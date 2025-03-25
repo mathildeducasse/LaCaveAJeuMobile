@@ -16,78 +16,82 @@ struct TransactionView: View {
     let yelloww = Color(red : 240/255.0, green : 230/255.0, blue: 158/255.0)
     var body: some View {
         NavigationView{
-            VStack{
-                Spacer().frame(height: 80);
-                HStack{
-                    NavigationLink(destination: TableauDeBordView()) {
-                        VStack{
-                            Image("arrow").resizable()
-                                .frame(width: 60, height: 40)
-                                .scaledToFit()
-                        }
-                        .background(bluee)
-                        .cornerRadius(10)
-                        .padding(.leading, 40.0)
-                    }
-                    Spacer()
-                    Text("💸")
-                        .font(.system(size:40))
-                        .padding(.trailing, 30.0)
-                    
-                }
-                HStack{
-                    Spacer()
-                    Text("Transactions")
-                        .font(.jomhuriaBigger())
-                        .foregroundColor(blueclair)
-                    Spacer()
-                }
-                Spacer().frame(height: 0);
+            ZStack{
+                bluee.ignoresSafeArea()
                 VStack{
                     
-                    HStack {
-                        Text("Filtres")
-                            .font(.jomhuria())
-                            .foregroundColor(bluee)
-                        Spacer()
-                        Button(action: {
-                            withAnimation {
-                                showFilters.toggle()
+                    Spacer().frame(height: 80);
+                    HStack{
+                        NavigationLink(destination: TableauDeBordView()) {
+                            VStack{
+                                Image("arrow").resizable()
+                                    .frame(width: 60, height: 40)
+                                    .scaledToFit()
                             }
-                        })
-                        {
-                            Text(showFilters ? "−" : "+")
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(bluee)
+                            .background(bluee)
+                            .cornerRadius(10)
+                            .padding(.leading, 40.0)
                         }
-                    }.frame(width: 260, height: 20)
-                        .padding()
-                        .background(bluegris)
-                        .cornerRadius(10)
-                    
-                    if showFilters{
-                        TransactionFiltresView(viewModel : viewModel)
+                        Spacer()
+                        Text("💸")
+                            .font(.system(size:40))
+                            .padding(.trailing, 30.0)
+                        
                     }
+                    HStack{
+                        Spacer()
+                        Text("Transactions")
+                            .font(.jomhuriaBigger())
+                            .foregroundColor(blueclair)
+                        Spacer()
+                    }
+                    Spacer().frame(height: 0);
+                    VStack{
+                        ScrollView{
+                            HStack {
+                                Text("Filtres")
+                                    .font(.jomhuria())
+                                    .foregroundColor(bluee)
+                                Spacer()
+                                Button(action: {
+                                    withAnimation {
+                                        showFilters.toggle()
+                                    }
+                                })
+                                {
+                                    Text(showFilters ? "−" : "+")
+                                        .font(.title)
+                                        .bold()
+                                        .foregroundColor(bluee)
+                                }
+                            }.frame(width: 260, height: 20)
+                                .padding()
+                                .background(bluegris)
+                                .cornerRadius(10)
+                            
+                            if showFilters{
+                                TransactionFiltresView(viewModel : viewModel)
+                            }
+                            
+                            VStack {
+                                ForEach($viewModel.transactions) { $transaction in
+                                    TransactionsView(transaction : $transaction)
+                                }}.onAppear {
+                                    viewModel.fetchTransaction()
+                                }
+                            
+                            Spacer()}
+                    }.padding(.horizontal, 20.0)
+                        .padding(.vertical, 30)
+                        .background(yelloww)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 30)
                     
-                    VStack {
-                        ForEach($viewModel.transactions) { $transaction in
-                            TransactionsView(transaction : $transaction)
-                        }}.onAppear {
-                            viewModel.fetchTransaction()
-                        }
+                }.background(bluee)
+                    .edgesIgnoringSafeArea(.all)
                     
-                    Spacer()
-                }.padding(.horizontal, 20.0)
-                    .padding(.vertical, 30)
-                    .background(yelloww)
-                    .cornerRadius(10)
-                    .padding(.horizontal, 30)
-                
-            }.background(bluee)
-            .edgesIgnoringSafeArea(.all)
-            .navigationBarBackButtonHidden(true)
-        }
+            }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

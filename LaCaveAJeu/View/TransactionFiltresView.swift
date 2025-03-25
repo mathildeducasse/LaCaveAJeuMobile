@@ -42,7 +42,7 @@ struct TransactionFiltresView: View {
                     Picker("proprietaire",selection: $proprietaire) {
                         Text("Sans selection").tag(nil as String?)
                         ForEach(viewModelVend.vendeurs) { vendeur in
-                            Text("\(vendeur.nom) \(vendeur.prenom)").tag("\(vendeur.id)")
+                            Text("\(vendeur.nom) \(vendeur.prenom)").tag(vendeur.id ?? "")
                         }
                         
                     }
@@ -58,7 +58,7 @@ struct TransactionFiltresView: View {
                     Picker("acheteur",selection: $acheteur) {
                         Text("Sans selection").tag(nil as String?)
                         ForEach(viewModelAch.acheteurs) { acheteur in
-                            Text("\(acheteur.nom) \(acheteur.prenom) ").tag("\(acheteur.id)")
+                            Text("\(acheteur.nom) \(acheteur.prenom) ").tag(acheteur.id ?? "")
                         }
                         
                     }

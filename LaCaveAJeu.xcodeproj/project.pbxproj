@@ -30,6 +30,7 @@
 		B7A252A32D9328CE00CC53B5 /* BilanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252A22D9328CE00CC53B5 /* BilanViewModel.swift */; };
 		B7A252A52D9328DB00CC53B5 /* BilanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252A42D9328DB00CC53B5 /* BilanView.swift */; };
 		B7A252A72D9328F200CC53B5 /* BilanVendeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252A62D9328F200CC53B5 /* BilanVendeur.swift */; };
+		B7A252A92D9376AD00CC53B5 /* Jomhuria-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7A252A82D9376AD00CC53B5 /* Jomhuria-Regular.ttf */; };
 		B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */; };
 		B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595892D8186E000219A27 /* ContentView.swift */; };
 		B7C5958C2D8186E100219A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C5958B2D8186E100219A27 /* Assets.xcassets */; };
@@ -37,7 +38,6 @@
 		B7C595992D8186E100219A27 /* LaCaveAJeuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595982D8186E100219A27 /* LaCaveAJeuTests.swift */; };
 		B7C595A32D8186E100219A27 /* LaCaveAJeuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595A22D8186E100219A27 /* LaCaveAJeuUITests.swift */; };
 		B7C595A52D8186E100219A27 /* LaCaveAJeuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595A42D8186E100219A27 /* LaCaveAJeuUITestsLaunchTests.swift */; };
-		B7C595B52D81C69100219A27 /* Jomhuria-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7C595B42D81C69100219A27 /* Jomhuria-Regular.ttf */; };
 		B7C595B82D81CA6D00219A27 /* SwiftUI+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595B72D81CA6D00219A27 /* SwiftUI+font.swift */; };
 		B7C595BA2D81D0CE00219A27 /* loginGestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595B92D81D0CE00219A27 /* loginGestionnaireView.swift */; };
 		B7C595BC2D81D19100219A27 /* StocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595BB2D81D19100219A27 /* StocksView.swift */; };
@@ -102,6 +102,7 @@
 		B7A252A22D9328CE00CC53B5 /* BilanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilanViewModel.swift; sourceTree = "<group>"; };
 		B7A252A42D9328DB00CC53B5 /* BilanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilanView.swift; sourceTree = "<group>"; };
 		B7A252A62D9328F200CC53B5 /* BilanVendeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilanVendeur.swift; sourceTree = "<group>"; };
+		B7A252A82D9376AD00CC53B5 /* Jomhuria-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jomhuria-Regular.ttf"; sourceTree = "<group>"; };
 		B7C595842D8186E000219A27 /* LaCaveAJeu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaCaveAJeu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuApp.swift; sourceTree = "<group>"; };
 		B7C595892D8186E000219A27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		B7C595A22D8186E100219A27 /* LaCaveAJeuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuUITests.swift; sourceTree = "<group>"; };
 		B7C595A42D8186E100219A27 /* LaCaveAJeuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B7C595B12D81C55800219A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		B7C595B42D81C69100219A27 /* Jomhuria-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Jomhuria-Regular.ttf"; path = "../../../../../../Downloads/Jomhuria/Jomhuria-Regular.ttf"; sourceTree = "<group>"; };
 		B7C595B72D81CA6D00219A27 /* SwiftUI+font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+font.swift"; sourceTree = "<group>"; };
 		B7C595B92D81D0CE00219A27 /* loginGestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginGestionnaireView.swift; sourceTree = "<group>"; };
 		B7C595BB2D81D19100219A27 /* StocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksView.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		B7C595B32D81C64600219A27 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				B7C595B42D81C69100219A27 /* Jomhuria-Regular.ttf */,
+				B7A252A82D9376AD00CC53B5 /* Jomhuria-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -426,7 +426,7 @@
 			files = (
 				B7C5958F2D8186E100219A27 /* Preview Assets.xcassets in Resources */,
 				B7C5958C2D8186E100219A27 /* Assets.xcassets in Resources */,
-				B7C595B52D81C69100219A27 /* Jomhuria-Regular.ttf in Resources */,
+				B7A252A92D9376AD00CC53B5 /* Jomhuria-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
