@@ -41,25 +41,25 @@ struct StocksView: View {
                
                 VStack {
                     
-//                    HStack{
-//                        
-//                        NavigationLink(destination: Group {
-//                            if viewModelAuth.isAuthenticated {
-//                                TableauDeBordView()
-//                            } else {
-//                                ContentView()
-//                            }
-//                        }) {
-//                            VStack{
-//                                Image("arrow").resizable()
-//                                    .frame(width: 60, height: 40)
-//                                    .scaledToFit()
-//                                    .cornerRadius(10)
-//                            }
-//                            
-//                            }
-//                        Spacer()
-//                    }
+                    HStack{
+                        
+                        NavigationLink(destination: Group {
+                            if viewModelAuth.isAuthenticated {
+                                TableauDeBordView()
+                            } else {
+                                ContentView()
+                            }
+                        }) {
+                            VStack{
+                                Image("arrow").resizable()
+                                    .frame(width: 60, height: 40)
+                                    .scaledToFit()
+                                    .cornerRadius(10)
+                            }
+                            
+                            }
+                        Spacer()
+                    }
                     Spacer().frame(height: 60);
                                 
                     // Panneau dynamique

@@ -90,7 +90,7 @@ class ServiceTransaction : ObservableObject{
                 }.resume()
                 
             } catch {
-                print("Erreur d'encodage JSON ajout transaction: \(error)")
+                print("Erreur d'encodage JSON ajout depot: \(error)")
             }
         }
     

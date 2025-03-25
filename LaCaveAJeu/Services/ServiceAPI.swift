@@ -24,7 +24,7 @@ class APIService : ObservableObject{
                         completion(decodedData)
                     }
                 }catch{
-                    print("erreur de decodage : ", error)
+                    print("erreur de decodage get vendeur: ", error)
                 }
             }
             
@@ -62,7 +62,7 @@ class APIService : ObservableObject{
                 }.resume()
                 
             } catch {
-                print("Erreur d'encodage JSON : \(error)")
+                print("Erreur d'encodage JSON add vendeur : \(error)")
             }
         }
         
@@ -131,14 +131,14 @@ class APIService : ObservableObject{
                         completion(decodedData)
                     }
                 }catch{
-                    print("erreur de decodage : ", error)
+                    print("erreur de decodage recup jeu: ", error)
                 }
             }
             
         }.resume()
     }
     
-    func fetchFilteredGames(proprietaire: String?, prix_min: String?, prix_max: String?, categorie: [String], intitule: String?, statut: String?, editeur: String?, quantites: Int?, completion: @escaping ([Game]) -> Void) {
+    func fetchFilteredGames(proprietaire: String?, prix_min: String?, prix_max: String?, categorie: [String], intitule: String?, statut: String?, editeur: String?, quantites: String?, completion: @escaping ([Game]) -> Void) {
         
         guard let url = URL(string: "\(baseURL)/jeu/filtered") else { return }
         
@@ -168,9 +168,12 @@ class APIService : ObservableObject{
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print("Réponse JSON brute :", json)
                     let decodedData = try JSONDecoder().decode([Game].self, from: data)
                     DispatchQueue.main.async {
                         completion(decodedData)
+                        
                     }
                 } catch {
                     print("Erreur de décodage pour jeux filtrés :", error)
@@ -207,7 +210,7 @@ class APIService : ObservableObject{
                 }.resume()
                 
             } catch {
-                print("Erreur d'encodage JSON : \(error)")
+                print("Erreur d'encodage JSON ajout jeu: \(error)")
             }
         }
 //------------------------------------------------------------------
@@ -224,7 +227,7 @@ class APIService : ObservableObject{
                         completion(decodedData)
                     }
                 }catch{
-                    print("erreur de decodage : ", error)
+                    print("erreur de decodage type jeu: ", error)
                 }
             }
             
@@ -242,7 +245,7 @@ class APIService : ObservableObject{
                         completion(decodedData)
                     }
                 }catch{
-                    print("erreur de decodage : ", error)
+                    print("erreur de decodage jeu by id: ", error)
                 }
             }
             

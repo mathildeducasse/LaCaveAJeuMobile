@@ -85,8 +85,8 @@ struct TransactionView: View {
                     .padding(.horizontal, 30)
                 
             }.background(bluee)
-                .edgesIgnoringSafeArea(.all)
-                .navigationBarBackButtonHidden(true)
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

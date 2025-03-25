@@ -193,7 +193,7 @@ struct DepotView: View {
             let id = item.typeJeu.typeJeuId
             if let intitule = viewModelTJ.intitulesCache[id] {
                 viewModelJeux.addGame(item.typeJeu){
-                    viewModelJeux.filterItems(proprietaire : idVendeur, prix_min : nil , prix_max : nil,categorie :[], intitule : intitule ,statut : nil , editeur : nil ,quantites : item.typeJeu.quantites){
+                    viewModelJeux.filterItemstime(proprietaire : idVendeur, prix_min : nil , prix_max : nil,categorie :[], intitule : intitule ,statut : nil , editeur : nil ,quantites : String(item.typeJeu.quantites)){
                         for i in  viewModelJeux.games{
                             if let id = i.id{
                                 let jeu : JeuDepot = JeuDepot( jeuid: id, quantites : item.typeJeu.quantites, prixUnitaire : item.typeJeu.prix)

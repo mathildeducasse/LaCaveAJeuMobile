@@ -40,7 +40,8 @@ struct FilterView: View {
                     Picker("proprietaire",selection: $proprietaire) {
                         Text("Sans selection").tag(nil as String?)
                         ForEach(viewModelVend.vendeurs) { vendeur in
-                            Text("\(vendeur.nom) \(vendeur.prenom)").tag("\(vendeur.id)")
+                            Text("\(vendeur.nom) \(vendeur.prenom)").tag(vendeur.id ?? "")
+                            
                         }
                         
                     }
@@ -104,7 +105,7 @@ struct FilterView: View {
                         Text("Sans selection").tag(nil as String?)
                         
                         ForEach(viewModel.games) { game in
-                            Text("\(game.intitule)")
+                            Text("\(game.intitule)").tag("\(game.intitule)" as String?)
                         }
                         
                     }
@@ -199,10 +200,9 @@ struct FilterView: View {
     
     
     func handleFiltre(){
-        guard let quantite  = Int(quantites ?? "") else { return }
-        viewModel.filterItems(proprietaire: proprietaire, prix_min: prix_min, prix_max: prix_max, categorie: categories, intitule: intitule, statut: statut, editeur: editeur, quantites: quantite){
-            viewModel.fetchGame()
-        }
+        
+        viewModel.filterItems(proprietaire: proprietaire, prix_min: prix_min, prix_max: prix_max, categorie: categories, intitule: intitule, statut: statut, editeur: editeur, quantites: quantites)
+        
     }
 }
 

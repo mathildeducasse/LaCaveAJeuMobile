@@ -215,9 +215,7 @@ struct VentesView: View {
                         .shadow(radius: 6)
                         .onAppear {
                             viewModelVentes.fetchVendeurs()
-                            viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil){
-                                print("filtre ok")
-                            }
+                            viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil)
                             viewModelAcheteur.fetchAcheteurs()
                         }
                     Spacer()

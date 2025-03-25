@@ -22,7 +22,7 @@ class AcheteurService : ObservableObject{
                         completion(decodedData)
                     }
                 }catch{
-                    print("erreur de decodage : ", error)
+                    print("erreur de decodage acheteur: ", error)
                 }
             }
             
