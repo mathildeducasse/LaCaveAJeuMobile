@@ -60,7 +60,8 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             )
             
-        }}
+        }.navigationBarBackButtonHidden(true)
+    }
         
 }
 

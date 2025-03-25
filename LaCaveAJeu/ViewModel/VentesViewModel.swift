@@ -28,4 +28,12 @@ class VenteViewModel: ObservableObject {
             }
         }
     }
+    
+    func getPrixPanier() -> Float {
+        var prixTotal: Float = 0.0
+        for item in panier {
+            prixTotal = prixTotal + Float(item.jeu.prix) * Float(item.quantite)
+        }
+        return prixTotal
+    }
 }

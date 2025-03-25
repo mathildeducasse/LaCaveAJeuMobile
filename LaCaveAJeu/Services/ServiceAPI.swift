@@ -179,7 +179,7 @@ class APIService : ObservableObject{
         }.resume()
     }
     
-    func addGame(_ game : Game) {
+    func addGame(_ game : JeuTp) {
             guard let url = URL(string : "\(baseURL)/jeu") else {return}
             
             do {
@@ -212,6 +212,47 @@ class APIService : ObservableObject{
         }
 //------------------------------------------------------------------
     
+//TypeJeu : --------------------------------------------------------
+    func fetchTypeJeux(completion: @escaping ([TypeJeu]) -> Void ){
+        guard let url = URL(string : "\(baseURL)/typejeu") else {return}
+        
+        URLSession.shared.dataTask(with: url) {data, _, error in
+            if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode([TypeJeu].self, from:data)
+                    DispatchQueue.main.async {
+                        completion(decodedData)
+                    }
+                }catch{
+                    print("erreur de decodage : ", error)
+                }
+            }
+            
+        }.resume()
+    }
+    
+    func fetchTypeJeuxById(id: String, completion: @escaping (TypeJeu) -> Void ){
+        guard let url = URL(string : "\(baseURL)/typejeu/\(id)") else {return}
+        
+        URLSession.shared.dataTask(with: url) {data, _, error in
+            if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode(TypeJeu.self, from:data)
+                    DispatchQueue.main.async {
+                        completion(decodedData)
+                    }
+                }catch{
+                    print("erreur de decodage : ", error)
+                }
+            }
+            
+        }.resume()
+    }
+    
+    
+    
+//------------------------------------------------------------------
+    
 //Catégorie : ------------------------------------------------------
     
     func fetchCategories(completion: @escaping ([Categorie]) -> Void ){
@@ -231,6 +272,7 @@ class APIService : ObservableObject{
                 }
             }.resume()
     }
+
     
 //------------------------------------------------------------------
 //Session : --------------------------------------------------------

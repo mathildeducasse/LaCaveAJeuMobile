@@ -75,6 +75,7 @@ struct TransactionView: View {
                 
         }.background(bluee)
         .edgesIgnoringSafeArea(.all)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

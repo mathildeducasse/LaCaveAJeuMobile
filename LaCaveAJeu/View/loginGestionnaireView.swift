@@ -10,7 +10,7 @@ struct loginGestionnaireView: View {
         let yellowlight = Color(red: 241/255.0, green: 227/255.0, blue: 129/255.0)
         let redark = Color(red : 149/255.0, green :29/255.0, blue:25/255.0)
 
-        NavigationView {
+        NavigationStack {
             ZStack {
                 VStack {
                     Spacer()
@@ -68,11 +68,7 @@ struct loginGestionnaireView: View {
                                 .foregroundColor(.red)
                         }
 
-                        NavigationLink(
-                            destination: TableauDeBordView(),
-                            isActive: $viewModel.isAuthenticated,
-                            label: { EmptyView() }
-                        )
+                       
                     }
                     .padding()
                     .background(prettyBlue)
@@ -92,7 +88,10 @@ struct loginGestionnaireView: View {
                 .resizable()
                 .ignoresSafeArea(.all)
             )
-        }
+            .navigationDestination(isPresented: $viewModel.isAuthenticated) {
+                    TableauDeBordView()
+                }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 struct loginGestionnaireView_Previews: PreviewProvider {
