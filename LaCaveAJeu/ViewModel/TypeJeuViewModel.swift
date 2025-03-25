@@ -24,14 +24,12 @@ class TypeJeuViewModel: ObservableObject {
                 }
             }
         }
-    func fetchTypeJeu(){
-        apiservice.fetchTypeJeux() {[weak self] typegames in
-            DispatchQueue.main.async {
-                self?.typesJeu = typegames
-            }
-            
+    func fetchTypeJeuxById(id: String, completion: @escaping (TypeJeu?) -> Void) {
+        apiservice.fetchTypeJeuxById(id: id) { typeJeu in
+            completion(typeJeu)
         }
     }
+
     
     
     func fetchTypeJeuxById(id: String, completion: @escaping (TypeJeu?) -> Void) {
