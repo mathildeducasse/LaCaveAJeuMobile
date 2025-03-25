@@ -24,23 +24,22 @@ class TypeJeuViewModel: ObservableObject {
                 }
             }
         }
+    func fetchTypeJeu(){
+        apiservice.fetchTypeJeux() {[weak self] typegames in
+            DispatchQueue.main.async {
+                self?.typesJeu = typegames
+            }
+            
+        }
+    }
+    
+    
     func fetchTypeJeuxById(id: String, completion: @escaping (TypeJeu?) -> Void) {
         apiservice.fetchTypeJeuxById(id: id) { typeJeu in
             completion(typeJeu)
         }
     }
 
-    
-    
-    func fetchTypeJeuxById(id: String, completion: @escaping (TypeJeu?) -> Void) {
-                // Simuler un appel réseau asynchrone
-                DispatchQueue.global().async {
-                    let typeJeu = self.typeJeuById[id] // Simuler un retour depuis une API
-                    DispatchQueue.main.async {
-                        completion(typeJeu)
-                    }
-                }
-            }
     
     
 }
