@@ -29,109 +29,170 @@ struct VentesView: View {
     var body: some View {
         ZStack{
             yellowlight.ignoresSafeArea()
-            VStack{
-                Spacer().frame(height: 80);
-                HStack{
-                    Spacer()
-                    Text("🛒")
-                        .font(.system(size:40))
-                        .padding(.trailing, 30.0)
-                    
-                }
-                HStack{
-                    Spacer()
-                    Text("Faire une vente")
-                        .font(.jomhuriaBigger())
-                        .foregroundColor(bleuclair)
-                    Spacer()
-                }
-                Spacer().frame(height: 10);
+            NavigationStack{
                 VStack{
-                    ScrollView{
-                        Spacer().frame(height: 30);
-                        ForEach(viewModelJeux.games) { jeu in
-                            VStack {
+                    Spacer().frame(height: 80);
+                    HStack{
+                        NavigationLink(destination: TableauDeBordView()) {
+                            VStack{
+                                Image("arrow2").resizable()
+                                    .frame(width: 60, height: 40)
+                                    .scaledToFit()
+                            }
+                            .padding(.leading, 35.0)
+                        }
+                        Spacer()
+                        Text("🛒")
+                            .font(.system(size:40))
+                            .padding(.trailing, 30.0)
+                        
+                    }
+                    HStack{
+                        Spacer()
+                        Text("Faire une vente")
+                            .font(.jomhuriaBigger())
+                            .foregroundColor(bleuclair)
+                        Spacer()
+                    }
+                    Spacer().frame(height: 10);
+                    VStack{
+                        ScrollView{
+                            Spacer().frame(height: 30);
+                            ForEach(viewModelJeux.games) { jeu in
+                                VStack {
+                                    HStack{
+                                        Text("\(jeu.intitule)").font(.headline)
+                                            .foregroundColor(bleufonce)
+                                        Spacer()
+                                    }.padding(.top, 3)
+                                        .padding(.leading, 10)
+                                    HStack{
+                                        Text("Vendeur : \(jeu.vendeur)").foregroundColor(bleufonce)
+                                        Spacer()
+                                    }.padding(.leading, 10)
+                                    HStack {
+                                        Text("Stock : \(jeu.quantites)").font(.subheadline).foregroundColor(bleufonce)
+                                        Text("Prix : \(jeu.prix, specifier: "%.2f")€").font(.subheadline).foregroundColor(bleufonce)
+                                        Spacer()
+                                    }.padding(.leading, 10)
+                                    HStack{
+                                        Stepper(value: Binding(
+                                            
+                                            get: { quantiteSelectionnee[jeu.id, default: 1] },
+                                            set: { quantiteSelectionnee[jeu.id] = min($0, jeu.quantites) }
+                                        ), in: 1...jeu.quantites) {
+                                            Text("Quantité:   \(quantiteSelectionnee[jeu.id, default: 1])").foregroundColor(bleufonce)
+                                        }
+                                        Button("Ajouter") {
+                                            viewModel.ajouterAuPanier(jeu: jeu, quantite: quantiteSelectionnee[jeu.id, default: 1])
+                                        }
+                                    }.padding(.horizontal, 10)
+                                    
+                                }.background(bleutresclair)
+                                    .cornerRadius(10)
+                                    .padding(.horizontal, 25.0)
+                                    .padding(.vertical, 4)
+                            }
+                            
+                            VStack{
                                 HStack{
-                                    Text("\(jeu.intitule)").font(.headline)
-                                        .foregroundColor(bleufonce)
+                                    Text("Acheteur :").foregroundColor(bleufonce)
                                     Spacer()
-                                }.padding(.top, 3)
+                                }.bold()
+                                    .padding(.top, 10)
                                     .padding(.leading, 10)
                                 HStack{
-                                    Text("Vendeur : \(jeu.vendeur)").foregroundColor(bleufonce)
+                                    Text("Nom").foregroundColor(bleufonce)
                                     Spacer()
-                                }.padding(.leading, 10)
-                                HStack {
-                                    Text("Stock : \(jeu.quantites)").font(.subheadline).foregroundColor(bleufonce)
-                                    Text("Prix : \(jeu.prix, specifier: "%.2f")€").font(.subheadline).foregroundColor(bleufonce)
-                                    Spacer()
-                                }.padding(.leading, 10)
+                                }.padding(.top, 5)
+                                    .padding(.leading, 10)
+                                TextField("", text: $nomAcheteur)
+                                    .background(.white)
+                                    .cornerRadius(7)
+                                    .padding(.horizontal, 15)
+                                    .padding(.trailing, 20)
                                 HStack{
-                                    Stepper(value: Binding(
-                                        
-                                        get: { quantiteSelectionnee[jeu.id, default: 1] },
-                                        set: { quantiteSelectionnee[jeu.id] = min($0, jeu.quantites) }
-                                    ), in: 1...jeu.quantites) {
-                                        Text("Quantité:   \(quantiteSelectionnee[jeu.id, default: 1])").foregroundColor(bleufonce)
+                                    Text("Prenom").foregroundColor(bleufonce)
+                                    Spacer()
+                                }.padding(.leading, 10)
+                                TextField("", text: $prenomAcheteur)
+                                    .background(.white)
+                                    .cornerRadius(7)
+                                    .padding(.horizontal, 15)
+                                    .padding(.trailing, 20)
+                                HStack{
+                                    Text("Email").foregroundColor(bleufonce)
+                                    Spacer()
+                                }.padding(.leading, 10)
+                                TextField("", text: $emailAcheteur)
+                                    .background(.white)
+                                    .cornerRadius(7)
+                                    .padding(.horizontal, 15)
+                                    .padding(.trailing, 20)
+                                HStack{
+                                    Text("Adresse").foregroundColor(bleufonce)
+                                    Spacer()
+                                }.padding(.leading, 10)
+                                TextField("", text: $adresseAcheteur)
+                                    .background(.white)
+                                    .cornerRadius(7)
+                                    .padding(.horizontal, 15)
+                                    .padding([.bottom, .trailing], 20)
+                                
+                                Button(action: handleCreate){
+                                    Text("Créer")
+                                        .padding(.vertical, 10.0)
+                                        .padding(.horizontal, 40.0)
+                                        .foregroundColor(bleufonce)
+                                        .bold()
+                                }.background(yellowlight)
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 15)
+                                    .alert("Acheteur créée !", isPresented: $showAlert) {
+                                        Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
+                                    } message: {
+                                        Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
                                     }
-                                    Button("Ajouter") {
-                                        viewModel.ajouterAuPanier(jeu: jeu, quantite: quantiteSelectionnee[jeu.id, default: 1])
-                                    }
-                                }.padding(.horizontal, 10)
                                 
                             }.background(bleutresclair)
                                 .cornerRadius(10)
                                 .padding(.horizontal, 25.0)
                                 .padding(.vertical, 4)
-                        }
-                        
-                        VStack{
-                            HStack{
-                                Text("Acheteur :").foregroundColor(bleufonce)
+                            VStack{
+                                Text("Selectionner un acheteur : ")
+                                    .font(.subheadline)
+                                    .bold()
+                                    .foregroundColor(yellowlight)
+                                
+                                Picker("acheteur",selection: $theID) {
+                                    Text("Sans selection").tag("")
+                                    ForEach(viewModelAcheteur.acheteurs) { acheteur in
+                                        if let idacheteur = acheteur.id {
+                                            Text("\(acheteur.nom) \(acheteur.prenom) ").tag("\(idacheteur)" as String)}
+                                    }
+                                    
+                                }
+                                .pickerStyle(MenuPickerStyle())
+                                .tint(yellowlight)
                                 Spacer()
-                            }.bold()
-                                .padding(.top, 10)
-                                .padding(.leading, 10)
-                            HStack{
-                                Text("Nom").foregroundColor(bleufonce)
-                                Spacer()
-                            }.padding(.top, 5)
-                                .padding(.leading, 10)
-                            TextField("", text: $nomAcheteur)
-                                .background(.white)
-                                .cornerRadius(7)
-                                .padding(.horizontal, 15)
-                                .padding(.trailing, 20)
-                            HStack{
-                                Text("Prenom").foregroundColor(bleufonce)
-                                Spacer()
-                            }.padding(.leading, 10)
-                            TextField("", text: $prenomAcheteur)
-                                .background(.white)
-                                .cornerRadius(7)
-                                .padding(.horizontal, 15)
-                                .padding(.trailing, 20)
-                            HStack{
-                                Text("Email").foregroundColor(bleufonce)
-                                Spacer()
-                            }.padding(.leading, 10)
-                            TextField("", text: $emailAcheteur)
-                                .background(.white)
-                                .cornerRadius(7)
-                                .padding(.horizontal, 15)
-                                .padding(.trailing, 20)
-                            HStack{
-                                Text("Adresse").foregroundColor(bleufonce)
-                                Spacer()
-                            }.padding(.leading, 10)
-                            TextField("", text: $adresseAcheteur)
-                                .background(.white)
-                                .cornerRadius(7)
-                                .padding(.horizontal, 15)
-                                .padding([.bottom, .trailing], 20)
+                            }
+                            VStack{
+                                Text("🛒 Panier :").padding()
+                                    .font(.title3)
+                                    .foregroundColor(bleufonce)
+                                ForEach(viewModel.panier){ item in
+                                    HStack {
+                                        Text("\(item.jeu.intitule) x\(item.quantite)").foregroundColor(bleufonce)
+                                        Spacer()
+                                        Text("\(Double(item.quantite) * item.jeu.prix, specifier: "%.2f")€").foregroundColor(bleufonce)
+                                    }.padding()
+                                }
+                            }.background(bleutresclair)
+                                .cornerRadius(10)
+                                .padding(.horizontal, 25.0)
                             
-                            Button(action: handleCreate){
-                                Text("Créer")
+                            Button(action: handleDepot){
+                                Text("Finaliser la commande")
                                     .padding(.vertical, 10.0)
                                     .padding(.horizontal, 40.0)
                                     .foregroundColor(bleufonce)
@@ -139,85 +200,33 @@ struct VentesView: View {
                             }.background(yellowlight)
                                 .cornerRadius(10)
                                 .padding(.bottom, 15)
-                                .alert("Acheteur créée !", isPresented: $showAlert) {
+                                .alert("Vente réalisée !", isPresented: $showAlert2) {
                                     Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
                                 } message: {
-                                    Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
+                                    Text("L'acheteur peut reccuperer ses jeux.")
                                 }
                             
-                        }.background(bleutresclair)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 25.0)
-                            .padding(.vertical, 4)
-                        VStack{
-                            Text("Selectionner un acheteur : ")
-                                .font(.subheadline)
-                                .bold()
-                                .foregroundColor(yellowlight)
-                            
-                            Picker("acheteur",selection: $theID) {
-                                Text("Sans selection").tag("")
-                                ForEach(viewModelAcheteur.acheteurs) { acheteur in
-                                    if let idacheteur = acheteur.id {
-                                        Text("\(acheteur.nom) \(acheteur.prenom) ").tag("\(idacheteur)" as String)}
-                                }
-                                
-                            }
-                            .pickerStyle(MenuPickerStyle())
-                            .tint(yellowlight)
-                            Spacer()
                         }
-                        VStack{
-                            Text("🛒 Panier :").padding()
-                                .font(.title3)
-                                .foregroundColor(bleufonce)
-                            ForEach(viewModel.panier){ item in
-                                HStack {
-                                    Text("\(item.jeu.intitule) x\(item.quantite)").foregroundColor(bleufonce)
-                                    Spacer()
-                                    Text("\(Double(item.quantite) * item.jeu.prix, specifier: "%.2f")€").foregroundColor(bleufonce)
-                                }.padding()
-                            }
-                        }.background(bleutresclair)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 25.0)
                         
-                        Button(action: handleDepot){
-                            Text("Finaliser la commande")
-                                .padding(.vertical, 10.0)
-                                .padding(.horizontal, 40.0)
-                                .foregroundColor(bleufonce)
-                                .bold()
-                        }.background(yellowlight)
-                            .cornerRadius(10)
-                            .padding(.bottom, 15)
-                            .alert("Vente réalisée !", isPresented: $showAlert2) {
-                                Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
-                            } message: {
-                                Text("L'acheteur peut reccuperer ses jeux.")
+                    }.frame(width: 340, height: 600)
+                        .background(bleufonce)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 30.0)
+                        .shadow(radius: 6)
+                        .onAppear {
+                            viewModelVentes.fetchVendeurs()
+                            viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil){
+                                print("filtre ok")
                             }
-                        
-                    }
-                    
-                }.frame(width: 340, height: 600)
-                    .background(bleufonce)
-                    .cornerRadius(10)
-                    .padding(.horizontal, 30.0)
-                    .shadow(radius: 6)
-                    .onAppear {
-                        viewModelVentes.fetchVendeurs()
-                        viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil){
-                            print("filtre ok")
+                            viewModelAcheteur.fetchAcheteurs()
                         }
-                        viewModelAcheteur.fetchAcheteurs()
-                    }
-                Spacer()
-            }.background(yellowlight)
-                .edgesIgnoringSafeArea(.all)
-            
-            
-        }.navigationBarBackButtonHidden(true)
-    }
+                    Spacer()
+                }.background(yellowlight)
+                    .edgesIgnoringSafeArea(.all)
+                
+                
+            }.navigationBarBackButtonHidden(true)
+        }}
     
     func handleCreate(){
         let acheteur : Acheteur = Acheteur(id: nil, nom: nomAcheteur, prenom: prenomAcheteur, email: emailAcheteur, adresse: adresseAcheteur)

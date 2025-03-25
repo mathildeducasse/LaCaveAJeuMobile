@@ -13,6 +13,7 @@ import SwiftUI
 
 struct StocksView: View {
     @State var showFilters = false
+    @StateObject private var viewModelAuth = LoginViewModel()
     @StateObject private var viewModel = JeuxViewModel()
     @StateObject private var viewModelVend = VendeurlViewModel()
     @State private var proprietaire : String? = nil
@@ -23,10 +24,13 @@ struct StocksView: View {
     @State private var quantites : String? = nil
     @State private var statut : String? = nil
     @State private var editeur : String? = nil
+    @State private var destination: AnyView = AnyView(ContentView())
+
     var body: some View {
         let yellowlight = Color(red: 241/255.0, green: 227/255.0, blue: 129/255.0)
         let redark = Color(red : 149/255.0, green :29/255.0, blue:25/255.0)
         let yellowlight2 = Color(red : 242/255.0, green : 233/255.0,blue:  223/255.0)
+        
         ZStack {
             // Image de fond
             Image("Image")
@@ -36,7 +40,26 @@ struct StocksView: View {
             ScrollView {
                
                 VStack {
-                        
+                    
+//                    HStack{
+//                        
+//                        NavigationLink(destination: Group {
+//                            if viewModelAuth.isAuthenticated {
+//                                TableauDeBordView()
+//                            } else {
+//                                ContentView()
+//                            }
+//                        }) {
+//                            VStack{
+//                                Image("arrow").resizable()
+//                                    .frame(width: 60, height: 40)
+//                                    .scaledToFit()
+//                                    .cornerRadius(10)
+//                            }
+//                            
+//                            }
+//                        Spacer()
+//                    }
                     Spacer().frame(height: 60);
                                 
                     // Panneau dynamique
@@ -86,7 +109,7 @@ struct StocksView: View {
                 .padding()
                 .frame(width: 350.0)
                         }
-        }.navigationBarBackButtonHidden(true)
+        }
     }
 }
 

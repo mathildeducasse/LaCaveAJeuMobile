@@ -14,6 +14,20 @@ struct loginGestionnaireView: View {
             ZStack {
                 VStack {
                     Spacer()
+                    HStack {
+                        NavigationLink(destination: ContentView()) {
+                            VStack{
+                                Image("arrow2")
+                                    .resizable()
+                                    .frame(width: 60, height: 40)
+                                    .scaledToFit()
+                                    .cornerRadius(10)
+                            }
+                            .padding(.leading, 40.0)
+                            }
+                        Spacer()
+                    }
+                    
                     Spacer()
                     
                     // Carte de connexion

@@ -21,12 +21,22 @@ struct VendeurView: View {
             VStack{
                 
                 HStack{
+                    NavigationLink(destination: TableauDeBordView()) {
+                        VStack{
+                            Image("arrow2").resizable()
+                                .frame(width: 60, height: 40)
+                                .scaledToFit()
+                        }
+                        .background(yellowlight)
+                        .cornerRadius(10)
+                        .padding(.leading, 30.0)}
                     Spacer()
                     Text("🤑")
                         .font(.system(size:40))
                         .padding(.trailing, 30.0)
                     
                 }
+                Spacer().frame(height: 10);
                 HStack{
                     Spacer()
                     Text("Vendeurs")
