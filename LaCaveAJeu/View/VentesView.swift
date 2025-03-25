@@ -90,8 +90,8 @@ struct VentesView: View {
                                 Text("Acheteur :").foregroundColor(bleufonce)
                                 Spacer()
                             }.bold()
-                            .padding(.top, 10)
-                            .padding(.leading, 10)
+                                .padding(.top, 10)
+                                .padding(.leading, 10)
                             HStack{
                                 Text("Nom").foregroundColor(bleufonce)
                                 Spacer()
@@ -137,24 +137,24 @@ struct VentesView: View {
                                     .foregroundColor(bleufonce)
                                     .bold()
                             }.background(yellowlight)
-                            .cornerRadius(10)
-                            .padding(.bottom, 15)
-                            .alert("Acheteur créée !", isPresented: $showAlert) {
-                                            Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
-                                        } message: {
-                                            Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
-                                        }
+                                .cornerRadius(10)
+                                .padding(.bottom, 15)
+                                .alert("Acheteur créée !", isPresented: $showAlert) {
+                                    Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
+                                } message: {
+                                    Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
+                                }
                             
                         }.background(bleutresclair)
-                        .cornerRadius(10)
-                        .padding(.horizontal, 25.0)
-                        .padding(.vertical, 4)
+                            .cornerRadius(10)
+                            .padding(.horizontal, 25.0)
+                            .padding(.vertical, 4)
                         VStack{
                             Text("Selectionner un acheteur : ")
                                 .font(.subheadline)
                                 .bold()
                                 .foregroundColor(yellowlight)
-                                
+                            
                             Picker("acheteur",selection: $theID) {
                                 Text("Sans selection").tag("")
                                 ForEach(viewModelAcheteur.acheteurs) { acheteur in
@@ -189,13 +189,13 @@ struct VentesView: View {
                                 .foregroundColor(bleufonce)
                                 .bold()
                         }.background(yellowlight)
-                        .cornerRadius(10)
-                        .padding(.bottom, 15)
-                        .alert("Acheteur créée !", isPresented: $showAlert2) {
-                                        Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
-                                    } message: {
-                                        Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
-                                    }
+                            .cornerRadius(10)
+                            .padding(.bottom, 15)
+                            .alert("Acheteur créée !", isPresented: $showAlert2) {
+                                Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
+                            } message: {
+                                Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
+                            }
                         
                     }
                     
@@ -206,7 +206,7 @@ struct VentesView: View {
                     .shadow(radius: 6)
                     .onAppear {
                         viewModelVentes.fetchVendeurs()
-                            viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil)
+                        viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil)
                         viewModelAcheteur.fetchAcheteurs()
                     }
                 Spacer()
@@ -214,7 +214,8 @@ struct VentesView: View {
                 .edgesIgnoringSafeArea(.all)
             
             
-        }}
+        }.navigationBarBackButtonHidden(true)
+    }
     
     func handleCreate(){
         let acheteur : Acheteur = Acheteur(id: nil, nom: nomAcheteur, prenom: prenomAcheteur, email: emailAcheteur, adresse: adresseAcheteur)

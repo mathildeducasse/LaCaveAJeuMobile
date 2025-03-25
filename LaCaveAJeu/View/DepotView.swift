@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct DepotView: View {
-    @StateObject private var viewModelJeux = JeuxViewModel()
-    @StateObject  var viewModelVendeur = VendeurlViewModel()
-    @StateObject private var viewModelAcheteur = AcheteurViewModel()
+    //@StateObject private var viewModelJeux = JeuxViewModel()
+    @StateObject private var viewModelDepot = DepotViewModel()
+    @StateObject private var viewModelVendeur = VendeurlViewModel()
     @StateObject private var viewModelTransac = TransactionViewModel()
-    @State private  var idVendeur : String = ""
+    @StateObject private var viewModelTJ = TypeJeuViewModel()
+    
     @State var showCreer = false
     let bleufonce = Color(red: 45/255.0, green: 85/255.0,blue: 166/255.0)
     let bleuclair = Color(red:121/255.0, green :178/255.0,blue: 218/255.0)
@@ -20,20 +21,18 @@ struct DepotView: View {
     let bluegris = Color(red : 193/255.0, green : 205/255.0, blue: 214/255.0)
     let bleutresclair = Color(red: 216/255.0, green: 239/255.0,blue: 255/255.0)
     
-    @State private var vendeur = ""
-    @State private var intitule = ""
-    @State private var editeur = ""
+    @State private  var idVendeur : String = ""
+    @State private var idTypeJeu = ""
     @State private var statut = ""
     @State private var prix = ""
     @State private var quantites = ""
-    @State private var categories = ""
-        
-    @State private var panier: [Game] = []
+    @State var i : Int = 0
+    
     var body: some View {
         ZStack{
             bleufonce.ignoresSafeArea()
             VStack{
-                Spacer().frame(height: 80);
+                Spacer().frame(height: 30);
                 HStack{
                     Spacer()
                     Text("🎲")
@@ -64,18 +63,16 @@ struct DepotView: View {
                             Text("Sans selection").tag("")
                             ForEach(viewModelVendeur.vendeurs) { vendeur in
                                 if let idvendeur = vendeur.id {
-                                    Text("\(vendeur.nom) \(vendeur.prenom) ")
-                                    .tag("\(idvendeur)" as String)}
+                                    Text("\(vendeur.nom) \(vendeur.prenom) ").tag("\(idvendeur)" as String)}
                             }
                             
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        .background(bleutresclair)
-                        .cornerRadius(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(bleufonce, lineWidth: 1)
-                        )
+                        }.pickerStyle(MenuPickerStyle())
+                            .background(bleutresclair)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(bleufonce, lineWidth: 1)
+                            )
                         HStack{
                             Spacer()
                             Button(action: {
@@ -87,12 +84,13 @@ struct DepotView: View {
                                 Text(showCreer ? "cacher" : "Creer un nouveau vendeur")
                                     .font(.system(size:14))
                                     .font(.title)
-                                    .foregroundStyle(bleufonce)
+                                    .foregroundColor(bleufonce)
                                     .underline()
                                     .padding(.trailing, 25)
                                     .padding(.top, 5)
-
-                            }}
+                                
+                            }
+                        }
                         if showCreer {
                             creerVendeurView(viewModel : viewModelVendeur)
                         }
@@ -106,117 +104,55 @@ struct DepotView: View {
                                 .padding(.top, 20)
                             Spacer()
                         }
-                        VStack {
-                            TextField("Intitulé", text: $intitule)
-                                .padding(.leading)
-                                .padding(.vertical, 5)
-                                .background(.white)
-                                .foregroundColor(bleufonce)
-                                .cornerRadius(5)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(bleufonce, lineWidth: 1) // Ajoute une bordure bleue
-                                )
-                                .padding([.top, .leading], 10)
-                                .padding(.trailing)
+                        AjoutJeuDepotView(viewModelTJ: viewModelTJ, panier: $viewModelDepot.panier, idVendeur: idVendeur)
+                        
+                        
+                        
+                        VStack{
+                            HStack{
+                                Spacer()
+                                Text("🎲 Jeux à déposer : ").foregroundColor(bleufonce)
+                                Spacer()
+                            }.padding([.top, .leading, .trailing])
+                                .padding(.bottom, 10.0)
+                            ForEach(viewModelDepot.panier){ item in
+                                   //getTypeJeubyID
                                 
-                            TextField("Éditeur", text: $editeur)
-                                .padding(.leading)
-                                .padding(.vertical, 5)
-                                .background(.white)
-                                .foregroundColor(bleufonce)
-                                .cornerRadius(5)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(bleufonce, lineWidth: 1) // Ajoute une bordure bleue
-                                )
-                                .padding([.top, .leading], 10)
-                                .padding(.trailing)
-                                
-                            TextField("Prix", text: $prix).padding(.leading)
-                                .padding(.vertical, 5)
-                                .background(.white)
-                                .foregroundColor(bleufonce)
-                                .cornerRadius(5)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(bleufonce, lineWidth: 1) // Ajoute une bordure bleue
-                                )
-                                .padding([.top, .leading], 10)
-                                .padding(.trailing)
-                            TextField("Quantité", text: $quantites).padding(.leading)
-                                .padding(.vertical, 5)
-                                .background(.white)
-                                .foregroundColor(bleufonce)
-                                .cornerRadius(5)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(bleufonce, lineWidth: 1) // Ajoute une bordure bleue
-                                )
-                                .padding([.top, .leading], 10)
-                                .padding(.trailing)
-//                            TextField("Catégories (séparées par des virgules)", text: $categories)
-                                            
-                              Button("Ajouter au dépôt") {
-                                  ajouterAuDepot()}
-                              
-                              .foregroundColor(bleufonce)
-                              .padding()
-                              .background(bleutresclair)
-                              .cornerRadius(10)
-                              .overlay(
-                                  RoundedRectangle(cornerRadius: 10)
-                                      .stroke(bleufonce, lineWidth: 1) // Ajoute une bordure bleue
-                              )
-                              .padding(10)
-                              
-                        }.padding(.vertical, 10)
-                        .background(bluegris)
+                                let intitule = loadIntitule(id: item.typeJeu.typeJeuId)
+                                let prixform = String(format: "%.2f", item.typeJeu.prix)
+                                Text(" \(intitule) \(prixform)")
+                               }
+                                                    
+                            }.background(bleutresclair)
                             .cornerRadius(10)
-                            .padding(.horizontal, 20)
-                            
-                        List(panier) { jeu in
-                        VStack(alignment: .leading) {
-                            Text(jeu.intitule).font(.headline)
-                            Text("Éditeur: \(jeu.editeur)").font(.subheadline)
-                            Text("Prix: \(jeu.prix, specifier: "\"%.2f\"") €")
-                            Text("Quantité: \(jeu.quantites)")
-                              }
-                        }.navigationTitle("Dépôt de jeux")
+                            .padding(.horizontal, 25.0)
+                        
+                        
                         
                     }
                 }.frame(width: 340, height: 600)
                     .background(yellowlight)
                     .cornerRadius(10)
                     .padding(.horizontal, 30.0)
-                    
+                
                     .shadow(radius: 6)
                     .onAppear{
                         viewModelVendeur.fetchVendeurs()
+                        viewModelTJ.fetchTypeJeu()
                     }
                 
                 Spacer()
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
-    private func ajouterAuDepot() {
-            guard let prixDouble = Double(prix), let quantitesInt = Int(quantites) else { return }
-            
-            let nouveauJeu = Game(id : nil, vendeur: vendeur,intitule: intitule, editeur: editeur,prix: prixDouble, categorie: [], quantite: quantitesInt, statut: "disponible")
-            
-            panier.append(nouveauJeu)
-            
-            // Réinitialiser les champs
-            vendeur = ""
-            intitule = ""
-            editeur = ""
-            statut = ""
-            prix = ""
-            quantites = ""
-            categories = ""
-        }
+    func loadIntitule(id : String)  -> String{
+        i = i + 1
+        viewModelTJ.fetchTypeJeuxById(id: id)
+        return viewModelTJ.typeJeuById[i].intitule
+    }
 }
+
 
 #Preview {
     DepotView()

@@ -106,7 +106,7 @@ struct VendeurView: View {
             .background(yellowlight)
             
             
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
 }

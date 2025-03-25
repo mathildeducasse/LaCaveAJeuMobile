@@ -126,7 +126,7 @@ struct TableauDeBordView: View {
             .background(yellowlight)
             
             
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

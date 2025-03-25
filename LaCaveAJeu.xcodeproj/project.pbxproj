@@ -20,6 +20,11 @@
 		B79B2BA52D8B088C00F35128 /* JeuxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2BA42D8B088C00F35128 /* JeuxView.swift */; };
 		B79B2BA72D8B319200F35128 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B2BA62D8B319200F35128 /* FilterView.swift */; };
 		B7A252902D8DD4F900CC53B5 /* DepotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2528F2D8DD4F900CC53B5 /* DepotView.swift */; };
+		B7A252922D8F086D00CC53B5 /* DepotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252912D8F086D00CC53B5 /* DepotViewModel.swift */; };
+		B7A252952D915AC100CC53B5 /* TypeJeu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252942D915AC100CC53B5 /* TypeJeu.swift */; };
+		B7A252992D915C4200CC53B5 /* TypeJeuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A252982D915C4200CC53B5 /* TypeJeuViewModel.swift */; };
+		B7A2529B2D915FDF00CC53B5 /* JeuTp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2529A2D915FDF00CC53B5 /* JeuTp.swift */; };
+		B7A2529D2D916B9200CC53B5 /* AjoutJeuDepotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A2529C2D916B9200CC53B5 /* AjoutJeuDepotView.swift */; };
 		B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */; };
 		B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C595892D8186E000219A27 /* ContentView.swift */; };
 		B7C5958C2D8186E100219A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C5958B2D8186E100219A27 /* Assets.xcassets */; };
@@ -82,6 +87,11 @@
 		B79B2BA42D8B088C00F35128 /* JeuxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuxView.swift; sourceTree = "<group>"; };
 		B79B2BA62D8B319200F35128 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		B7A2528F2D8DD4F900CC53B5 /* DepotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepotView.swift; sourceTree = "<group>"; };
+		B7A252912D8F086D00CC53B5 /* DepotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepotViewModel.swift; sourceTree = "<group>"; };
+		B7A252942D915AC100CC53B5 /* TypeJeu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeJeu.swift; sourceTree = "<group>"; };
+		B7A252982D915C4200CC53B5 /* TypeJeuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeJeuViewModel.swift; sourceTree = "<group>"; };
+		B7A2529A2D915FDF00CC53B5 /* JeuTp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuTp.swift; sourceTree = "<group>"; };
+		B7A2529C2D916B9200CC53B5 /* AjoutJeuDepotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjoutJeuDepotView.swift; sourceTree = "<group>"; };
 		B7C595842D8186E000219A27 /* LaCaveAJeu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaCaveAJeu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C595872D8186E000219A27 /* LaCaveAJeuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaCaveAJeuApp.swift; sourceTree = "<group>"; };
 		B7C595892D8186E000219A27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -250,6 +260,8 @@
 				B7D799CC2D8C159A00583684 /* Categorie.swift */,
 				B7D799CE2D8C4B6C00583684 /* Transaction.swift */,
 				B7D799D62D8C7B3F00583684 /* JeuTr.swift */,
+				B7A252942D915AC100CC53B5 /* TypeJeu.swift */,
+				B7A2529A2D915FDF00CC53B5 /* JeuTp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +284,7 @@
 				B7D799D82D8C81C300583684 /* TransactionFiltresView.swift */,
 				B7D799DE2D8D6BEF00583684 /* VentesView.swift */,
 				B7A2528F2D8DD4F900CC53B5 /* DepotView.swift */,
+				B7A2529C2D916B9200CC53B5 /* AjoutJeuDepotView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +299,8 @@
 				B79B2B9B2D89975D00F35128 /* SessionViewModel.swift */,
 				B7D799D02D8C52ED00583684 /* TransactionViewModel.swift */,
 				B7D799DC2D8D611000583684 /* AcheteurViewModel.swift */,
+				B7A252912D8F086D00CC53B5 /* DepotViewModel.swift */,
+				B7A252982D915C4200CC53B5 /* TypeJeuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -423,8 +438,11 @@
 			files = (
 				B7C5958A2D8186E000219A27 /* ContentView.swift in Sources */,
 				B7C595D02D885EF800219A27 /* creerVendeurView.swift in Sources */,
+				B7A252952D915AC100CC53B5 /* TypeJeu.swift in Sources */,
+				B7A2529D2D916B9200CC53B5 /* AjoutJeuDepotView.swift in Sources */,
 				B7552EF32D8D7BB000F8B542 /* LoginViewModel.swift in Sources */,
 				B7C595C42D8709F200219A27 /* Vendeur.swift in Sources */,
+				B7A252992D915C4200CC53B5 /* TypeJeuViewModel.swift in Sources */,
 				B7C595C62D870C4000219A27 /* Acheteur.swift in Sources */,
 				B79B2BA52D8B088C00F35128 /* JeuxView.swift in Sources */,
 				B7C595882D8186E000219A27 /* LaCaveAJeuApp.swift in Sources */,
@@ -432,6 +450,7 @@
 				B79B2BA72D8B319200F35128 /* FilterView.swift in Sources */,
 				B7C595B82D81CA6D00219A27 /* SwiftUI+font.swift in Sources */,
 				B79B2BA12D8B076B00F35128 /* ServiceTransactions.swift in Sources */,
+				B7A252922D8F086D00CC53B5 /* DepotViewModel.swift in Sources */,
 				B79B2B9E2D899B3500F35128 /* SessionView.swift in Sources */,
 				B79B2B962D886B5300F35128 /* VendeurdetailView.swift in Sources */,
 				B79B2B9C2D89975D00F35128 /* SessionViewModel.swift in Sources */,
@@ -440,6 +459,7 @@
 				B7D799CD2D8C159A00583684 /* Categorie.swift in Sources */,
 				B7D799DD2D8D611100583684 /* AcheteurViewModel.swift in Sources */,
 				B7D799CF2D8C4B6C00583684 /* Transaction.swift in Sources */,
+				B7A2529B2D915FDF00CC53B5 /* JeuTp.swift in Sources */,
 				B7C595CB2D881E5E00219A27 /* TableauDeBordView.swift in Sources */,
 				B7C595C82D8759C400219A27 /* VendeurView.swift in Sources */,
 				B7D799D32D8C54D500583684 /* TransactionView.swift in Sources */,

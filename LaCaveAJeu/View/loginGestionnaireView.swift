@@ -91,7 +91,7 @@ struct loginGestionnaireView: View {
             .navigationDestination(isPresented: $viewModel.isAuthenticated) {
                     TableauDeBordView()
                 }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 struct loginGestionnaireView_Previews: PreviewProvider {

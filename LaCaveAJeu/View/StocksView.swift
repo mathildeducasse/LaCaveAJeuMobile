@@ -86,7 +86,7 @@ struct StocksView: View {
                 .padding()
                 .frame(width: 350.0)
                         }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

@@ -41,7 +41,7 @@ class JeuxViewModel: ObservableObject {
         }
     }
     
-    func addGame(_ game : Game){
+    func addGame(_ game : JeuTp){
         apiservice.addGame(game)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.fetchGame()
