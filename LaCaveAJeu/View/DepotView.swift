@@ -115,14 +115,18 @@ struct DepotView: View {
                                 Spacer()
                             }.padding([.top, .leading, .trailing])
                                 .padding(.bottom, 10.0)
-                            ForEach(viewModelDepot.panier){ item in
-                                   //getTypeJeubyID
-                                
-                                let intitule = loadIntitule(id: item.typeJeu.typeJeuId)
-                                let prixform = String(format: "%.2f", item.typeJeu.prix)
-                                Text(" \(intitule) \(prixform)")
-                               }
-                                                    
+                            ForEach(viewModelDepot.panier) { item in
+                                let id = item.typeJeu.typeJeuId
+                                if let intitule = viewModelTJ.intitulesCache[id] {
+                                    //Text(" \(intitule) \(String(format: "%.2f", item.typeJeu.prix)) €")
+                                    Text("\(intitule) - \(item.typeJeu.quantites)x à \(String(format: "%.2f", item.typeJeu.prix)) €")
+                                } else {
+                                    Text("Chargement...")
+                                        .onAppear {
+                                            viewModelTJ.fetchIntitule(for: id)
+                                        }
+                                }
+                            }
                             }.background(bleutresclair)
                             .cornerRadius(10)
                             .padding(.horizontal, 25.0)
@@ -146,11 +150,7 @@ struct DepotView: View {
         }.navigationBarBackButtonHidden(true)
     }
     
-    func loadIntitule(id : String)  -> String{
-        i = i + 1
-        viewModelTJ.fetchTypeJeuxById(id: id)
-        return viewModelTJ.typeJeuById[i].intitule
-    }
+    
 }
 
 
