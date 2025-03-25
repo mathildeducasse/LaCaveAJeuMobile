@@ -23,7 +23,7 @@ class JeuxViewModel: ObservableObject {
         }
     }
     
-    func filterItems(proprietaire : String?, prix_min : String? , prix_max : String?,categorie : [String],intitule : String? ,statut : String? , editeur : String? ,quantites : String?) {
+    func filterItems(proprietaire : String?, prix_min : String? , prix_max : String?,categorie : [String],intitule : String? ,statut : String? , editeur : String? ,quantites : Int?) {
         apiservice.fetchFilteredGames(proprietaire : proprietaire, prix_min : prix_min, prix_max : prix_max,categorie : categorie, intitule : intitule, statut : statut, editeur : editeur, quantites  :quantites ) { [weak self] jeux in
                DispatchQueue.main.async {
                    self?.games = jeux

@@ -138,7 +138,7 @@ class APIService : ObservableObject{
         }.resume()
     }
     
-    func fetchFilteredGames(proprietaire: String?, prix_min: String?, prix_max: String?, categorie: [String], intitule: String?, statut: String?, editeur: String?, quantites: String?, completion: @escaping ([Game]) -> Void) {
+    func fetchFilteredGames(proprietaire: String?, prix_min: String?, prix_max: String?, categorie: [String], intitule: String?, statut: String?, editeur: String?, quantites: Int?, completion: @escaping ([Game]) -> Void) {
         
         guard let url = URL(string: "\(baseURL)/jeu/filtered") else { return }
         

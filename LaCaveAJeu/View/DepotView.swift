@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DepotView: View {
-    //@StateObject private var viewModelJeux = JeuxViewModel()
+    @StateObject private var viewModelJeux = JeuxViewModel()
     @StateObject private var viewModelDepot = DepotViewModel()
     @StateObject private var viewModelVendeur = VendeurlViewModel()
     @StateObject private var viewModelTransac = TransactionViewModel()
@@ -143,6 +143,7 @@ struct DepotView: View {
                     .onAppear{
                         viewModelVendeur.fetchVendeurs()
                         viewModelTJ.fetchTypeJeu()
+                        
                     }
                 
                 Spacer()
@@ -150,7 +151,35 @@ struct DepotView: View {
         }.navigationBarBackButtonHidden(true)
     }
     
-    
+    func handleDepot() {
+        //let prixTot = viewModelTJ.getPrixPanier()
+        //print("the id of acheteur ahh : " +  theID)
+        var jeux : [JeuDepot] = []
+        for item in viewModelDepot.panier{
+            let id = item.typeJeu.typeJeuId
+            if let intitule = viewModelTJ.intitulesCache[id] {
+                viewModelJeux.addGame(item.typeJeu)
+                viewModelJeux.filterItems(proprietaire : idVendeur, prix_min : nil , prix_max : nil,categorie :[], intitule : intitule ,statut : nil , editeur : nil ,quantites : item.typeJeu.quantites)
+                for i in  viewModelJeux.games{
+                    if let id = i.id{
+                        let jeu : JeuDepot = JeuDepot( jeuid: id, quantites : item.typeJeu.quantites, prixUnitaire : item.typeJeu.prix)
+                        jeux.append(jeu)
+                    }
+       
+                }
+            }
+            
+        }
+        if let idgestionnaie = GestionnaireSession.shared.gestionnaireID{
+            
+            
+            //viewModelTransac.addTransaction(transaction)
+            showAlert2 = true
+            }else{
+            print("pas de gestionnaire connecté")
+        }
+        
+    }
 }
 
 
