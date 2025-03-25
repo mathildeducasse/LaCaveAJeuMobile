@@ -15,6 +15,8 @@ struct DepotView: View {
     @StateObject private var viewModelTJ = TypeJeuViewModel()
     
     @State var showCreer = false
+    @State var showAlert = false
+
     let bleufonce = Color(red: 45/255.0, green: 85/255.0,blue: 166/255.0)
     let bleuclair = Color(red:121/255.0, green :178/255.0,blue: 218/255.0)
     let yellowlight = Color(red : 240/255.0,green: 230/255.0, blue:158/255.0)
@@ -34,6 +36,18 @@ struct DepotView: View {
             VStack{
                 Spacer().frame(height: 30);
                 HStack{
+                    NavigationLink(destination: ContentView()) {
+                        VStack{
+                            
+                            Text("<-")
+                                .font(.system(size:10))
+                        }
+                        //.frame(width: 160, height: 140)
+                        .background(yellowlight)
+                        .cornerRadius(10)
+                        .padding(.leading, 30.0)
+                    }
+                    
                     Spacer()
                     Text("🎲")
                         .font(.system(size:40))
@@ -134,6 +148,22 @@ struct DepotView: View {
                         
                         
                     }
+                    
+                    Button(action: handleDepot){
+                        Text("Déposer des jeux")
+                            .padding(.vertical, 10.0)
+                            .padding(.horizontal, 40.0)
+                            .foregroundColor(yellowlight)
+                            .bold()
+                    }.background(bleufonce)
+                        .cornerRadius(10)
+                        .padding(.bottom, 15)
+                        .alert("Dépot réalisé !", isPresented: $showAlert) {
+                            Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
+                        } message: {
+                            Text("Ce dépot a bien été réalisé, les jeux sont disponible à la vente.")
+                        }
+                    
                 }.frame(width: 340, height: 600)
                     .background(yellowlight)
                     .cornerRadius(10)
@@ -155,31 +185,36 @@ struct DepotView: View {
         //let prixTot = viewModelTJ.getPrixPanier()
         //print("the id of acheteur ahh : " +  theID)
         var jeux : [JeuDepot] = []
+        var prixTot : Float = 0.0
         for item in viewModelDepot.panier{
+            prixTot = prixTot + Float(item.typeJeu.quantites) * Float(item.typeJeu.prix)
             let id = item.typeJeu.typeJeuId
             if let intitule = viewModelTJ.intitulesCache[id] {
-                viewModelJeux.addGame(item.typeJeu)
-                viewModelJeux.filterItems(proprietaire : idVendeur, prix_min : nil , prix_max : nil,categorie :[], intitule : intitule ,statut : nil , editeur : nil ,quantites : item.typeJeu.quantites)
-                for i in  viewModelJeux.games{
-                    if let id = i.id{
-                        let jeu : JeuDepot = JeuDepot( jeuid: id, quantites : item.typeJeu.quantites, prixUnitaire : item.typeJeu.prix)
-                        jeux.append(jeu)
-                    }
-       
-                }
+                viewModelJeux.addGame(item.typeJeu){
+                    viewModelJeux.filterItems(proprietaire : idVendeur, prix_min : nil , prix_max : nil,categorie :[], intitule : intitule ,statut : nil , editeur : nil ,quantites : item.typeJeu.quantites){
+                        for i in  viewModelJeux.games{
+                            if let id = i.id{
+                                let jeu : JeuDepot = JeuDepot( jeuid: id, quantites : item.typeJeu.quantites, prixUnitaire : item.typeJeu.prix)
+                                jeux.append(jeu)
+                            }
+                        }
+                        finalizeDepot(jeux : jeux, prixTot : prixTot)
+                    }}
+            }
+        }
+        func finalizeDepot(jeux : [JeuDepot], prixTot : Float){
+            if let idgestionnaire = GestionnaireSession.shared.gestionnaireID{
+                
+                let depot : Depot = Depot(gestionnaire: idgestionnaire, proprietaire: idVendeur, prix_total: prixTot, frais: 10, remise: 0, jeux: jeux)
+                
+                viewModelTransac.addDepot(depot)
+                showAlert = true
+                }else{
+                print("pas de gestionnaire connecté")
             }
             
         }
-        if let idgestionnaie = GestionnaireSession.shared.gestionnaireID{
-            
-            
-            //viewModelTransac.addTransaction(transaction)
-            //showAlert = true
-            }else{
-            print("pas de gestionnaire connecté")
         }
-        
-    }
 }
 
 

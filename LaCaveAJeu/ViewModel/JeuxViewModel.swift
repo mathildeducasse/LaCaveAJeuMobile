@@ -23,10 +23,11 @@ class JeuxViewModel: ObservableObject {
         }
     }
     
-    func filterItems(proprietaire : String?, prix_min : String? , prix_max : String?,categorie : [String],intitule : String? ,statut : String? , editeur : String? ,quantites : Int?) {
+    func filterItems(proprietaire : String?, prix_min : String? , prix_max : String?,categorie : [String],intitule : String? ,statut : String? , editeur : String? ,quantites : Int?, completion: @escaping () -> Void) {
         apiservice.fetchFilteredGames(proprietaire : proprietaire, prix_min : prix_min, prix_max : prix_max,categorie : categorie, intitule : intitule, statut : statut, editeur : editeur, quantites  :quantites ) { [weak self] jeux in
                DispatchQueue.main.async {
                    self?.games = jeux
+                   completion()
                }
            }
        }
@@ -41,10 +42,11 @@ class JeuxViewModel: ObservableObject {
         }
     }
     
-    func addGame(_ game : JeuTp){
+    func addGame(_ game : JeuTp, completion: @escaping () -> Void){
         apiservice.addGame(game)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.fetchGame()
+                    completion()
                 }
     }
     

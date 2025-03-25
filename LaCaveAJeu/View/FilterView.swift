@@ -200,7 +200,9 @@ struct FilterView: View {
     
     func handleFiltre(){
         guard let quantite  = Int(quantites ?? "") else { return }
-        viewModel.filterItems(proprietaire: proprietaire, prix_min: prix_min, prix_max: prix_max, categorie: categories, intitule: intitule, statut: statut, editeur: editeur, quantites: quantite)
+        viewModel.filterItems(proprietaire: proprietaire, prix_min: prix_min, prix_max: prix_max, categorie: categories, intitule: intitule, statut: statut, editeur: editeur, quantites: quantite){
+            print("filter ok")
+        }
     }
 }
 

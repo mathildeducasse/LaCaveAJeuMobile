@@ -61,6 +61,39 @@ class ServiceTransaction : ObservableObject{
             }
         }
     
+    
+    func addDepot(_ depot : Depot) {
+            guard let url = URL(string : "\(baseURL)/transaction") else {return}
+            
+            do {
+                let jsonData = try JSONEncoder().encode(depot)
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.httpBody = jsonData
+                
+                URLSession.shared.dataTask(with: request) { data, response, error in
+                    if let error = error {
+                        print("Erreur de requête : \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    if let httpResponse = response as? HTTPURLResponse {
+                        print("Statut HTTP : \(httpResponse.statusCode)")
+                    }
+
+                    if let data = data {
+                        let jsonString = String(data: data, encoding: .utf8) ?? "Aucune réponse"
+                        print(" Réponse JSON : \(jsonString)")
+                        
+                    }
+                }.resume()
+                
+            } catch {
+                print("Erreur d'encodage JSON ajout transaction: \(error)")
+            }
+        }
+    
     func fetchFilteredTransaction(gestionnaire : String?, acheteur : String? ,proprietaire: String?, prix_min: String?, prix_max: String?, remise : Float?, nameJeu: String?, statut: String?, completion: @escaping ([Transaction]) -> Void) {
         
         guard let url = URL(string: "\(baseURL)/transaction/filtered") else { return }

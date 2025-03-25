@@ -191,10 +191,10 @@ struct VentesView: View {
                         }.background(yellowlight)
                             .cornerRadius(10)
                             .padding(.bottom, 15)
-                            .alert("Acheteur créée !", isPresented: $showAlert2) {
+                            .alert("Vente réalisée !", isPresented: $showAlert2) {
                                 Button("OK", role: .cancel) {} // Bouton pour fermer l'alerte
                             } message: {
-                                Text("Cet acheteur à bien été créé. Vous pouvez maintenant le selectionner.")
+                                Text("L'acheteur peut reccuperer ses jeux.")
                             }
                         
                     }
@@ -206,7 +206,9 @@ struct VentesView: View {
                     .shadow(radius: 6)
                     .onAppear {
                         viewModelVentes.fetchVendeurs()
-                        viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil)
+                        viewModelJeux.filterItems(proprietaire : nil, prix_min : nil , prix_max : nil,categorie :[],intitule : nil ,statut : "disponible" , editeur : nil ,quantites : nil){
+                            print("filtre ok")
+                        }
                         viewModelAcheteur.fetchAcheteurs()
                     }
                 Spacer()
