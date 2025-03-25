@@ -118,15 +118,15 @@ struct DepotView: View {
                             ForEach(viewModelDepot.panier) { item in
                                 let id = item.typeJeu.typeJeuId
                                 if let intitule = viewModelTJ.intitulesCache[id] {
-                                    Text(" \(intitule) \(String(format: "%.2f", item.typeJeu.prix)) €")
+                                    //Text(" \(intitule) \(String(format: "%.2f", item.typeJeu.prix)) €")
+                                    Text("\(intitule) - \(item.typeJeu.quantites)x à \(String(format: "%.2f", item.typeJeu.prix)) €")
                                 } else {
-                                    Text("Chargement...") // Afficher un texte temporaire
+                                    Text("Chargement...")
                                         .onAppear {
-                                            viewModelDepot.fetchIntitule(for: id)
+                                            viewModelTJ.fetchIntitule(for: id)
                                         }
                                 }
                             }
-                                                    
                             }.background(bleutresclair)
                             .cornerRadius(10)
                             .padding(.horizontal, 25.0)
