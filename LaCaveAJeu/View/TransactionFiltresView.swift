@@ -26,6 +26,8 @@ struct TransactionFiltresView: View {
     var body: some View {
         VStack{
             ScrollView {
+               
+                
                 Picker("Statut", selection: $statut) {
                     Text("---Statuts---").tag(nil as String?)
                     Text("depot").tag("depot" as String?)

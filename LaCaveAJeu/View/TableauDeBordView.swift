@@ -51,7 +51,7 @@ struct TableauDeBordView: View {
                             .frame(width: 160, height: 140)
                             .background(bluefonce)
                             .cornerRadius(10)}
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: BilanView()) {
                             VStack{
                                 Spacer().frame(height: 40);
                                 Text("📋")
